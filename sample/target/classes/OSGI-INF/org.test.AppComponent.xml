@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="org.test.AppComponent" activate="activate" deactivate="deactivate">
+    <implementation class="org.test.AppComponent"/>
+    <property name="service.pid" value="org.test.AppComponent"/>
+    <reference name="deviceService" interface="org.onosproject.net.device.DeviceService" cardinality="1..1" policy="static" bind="bindDeviceService" unbind="unbindDeviceService"/>
+</scr:component>
