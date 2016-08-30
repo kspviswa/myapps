@@ -1,0 +1,2516 @@
+{
+  "interfaces": {
+    "vyatta-interfaces-bridge:bridge": [
+      {
+        "vyatta-interfaces-bridge:forwarding-delay": "integer",
+        "vyatta-interfaces-bridge:dhcpv6-options": {
+          "vyatta-interfaces-dataplane:temporary": "object",
+          "vyatta-interfaces-dataplane:parameters-only": "object"
+        },
+        "vyatta-interfaces-bridge:disable-link-detect": "object",
+        "vyatta-security-firewall:firewall": {
+          "vyatta-security-firewall:in": [
+            "string"
+          ],
+          "vyatta-security-firewall:out": [
+            "string"
+          ]
+        },
+        "vyatta-interfaces-bridge:mac": "string",
+        "vyatta-interfaces-bridge:tagnode": "string",
+        "vyatta-interfaces-bridge:priority": "integer",
+        "vyatta-interfaces-bridge:hello-time": "integer",
+        "vyatta-interfaces-bridge:ipv6": {
+          "vyatta-protocols-ospfv3:ospfv3": {
+            "vyatta-protocols-ospfv3:transmit-delay": "integer",
+            "vyatta-protocols-ospfv3:cost": "integer",
+            "vyatta-protocols-ospfv3:process": [
+              {
+                "vyatta-protocols-ospfv3:instance-id": [
+                  {
+                    "vyatta-protocols-ospfv3:tagnode": "integer",
+                    "vyatta-protocols-ospfv3:transmit-delay": "integer",
+                    "vyatta-protocols-ospfv3:cost": "integer",
+                    "vyatta-protocols-ospfv3:network": [
+                      {}
+                    ],
+                    "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+                    "vyatta-protocols-ospfv3:priority": "integer",
+                    "vyatta-protocols-ospfv3:hello-interval": "integer",
+                    "vyatta-protocols-ospfv3:dead-interval": "integer",
+                    "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+                    "vyatta-protocols-ospfv3:area": "string or integer",
+                    "vyatta-protocols-ospfv3:neighbor": [
+                      {
+                        "vyatta-protocols-ospfv3:tagnode": "string"
+                      }
+                    ]
+                  }
+                ],
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-ospfv3:network": [
+              {}
+            ],
+            "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+            "vyatta-protocols-ospfv3:priority": "integer",
+            "vyatta-protocols-ospfv3:hello-interval": "integer",
+            "vyatta-protocols-ospfv3:mtu-ignore": "object",
+            "vyatta-protocols-ospfv3:dead-interval": "integer",
+            "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+            "vyatta-protocols-ospfv3:area": "string or integer",
+            "vyatta-protocols-ospfv3:neighbor": [
+              {
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim6:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-ipv6-rtradv:dup-addr-detect-transmits": "integer",
+          "vyatta-ipv6-rtradv:disable-forwarding": "object",
+          "vyatta-protocols-mld:mld": {
+            "vyatta-protocols-mld:query-interval": "integer",
+            "vyatta-protocols-mld:robustness-variable": "integer",
+            "vyatta-protocols-mld:version": "integer",
+            "vyatta-protocols-mld:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-mld:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-mld:limit": "integer",
+            "vyatta-protocols-mld:query-max-response-time": "integer",
+            "vyatta-protocols-mld:limit-exception": "string",
+            "vyatta-protocols-mld:access-group": "string",
+            "vyatta-protocols-mld:querier-timeout": "integer",
+            "vyatta-protocols-mld:last-member-query-interval": "integer",
+            "vyatta-protocols-mld:last-member-query-count": "integer"
+          },
+          "vyatta-ipv6-rtradv:address": {
+            "vyatta-ipv6-rtradv:autoconf": "object",
+            "vyatta-ipv6-rtradv:eui64": [
+              "string"
+            ]
+          },
+          "vyatta-protocols-ripng:ripng": {
+            "vyatta-protocols-ripng:metric-offset": "integer",
+            "vyatta-protocols-ripng:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            },
+            "vyatta-protocols-ripng:enable": "object",
+            "vyatta-protocols-ripng:neighbor": "string"
+          },
+          "vyatta-ipv6-rtradv:router-advert": {
+            "vyatta-ipv6-rtradv:min-interval": "integer",
+            "vyatta-ipv6-rtradv:prefix": [
+              {
+                "vyatta-ipv6-rtradv:tagnode": "string",
+                "vyatta-ipv6-rtradv:on-link-flag": "boolean",
+                "vyatta-ipv6-rtradv:preferred-lifetime": "string",
+                "vyatta-ipv6-rtradv:valid-lifetime": "string",
+                "vyatta-ipv6-rtradv:autonomous-flag": "boolean"
+              }
+            ],
+            "vyatta-ipv6-rtradv:default-lifetime": "integer",
+            "vyatta-ipv6-rtradv:link-mtu": "integer",
+            "vyatta-ipv6-rtradv:send-advert": "boolean",
+            "vyatta-ipv6-rtradv:retrans-timer": "integer",
+            "vyatta-ipv6-rtradv:cur-hop-limit": "integer",
+            "vyatta-ipv6-rtradv:other-config-flag": "boolean",
+            "vyatta-ipv6-rtradv:reachable-time": "integer",
+            "vyatta-ipv6-rtradv:managed-flag": "boolean",
+            "vyatta-ipv6-rtradv:max-interval": "integer"
+          }
+        },
+        "vyatta-interfaces-bridge:ip": {
+          "vyatta-protocols-igmp:igmp": {
+            "vyatta-protocols-igmp:limit": "integer",
+            "vyatta-protocols-igmp:startup-query-count": "integer",
+            "vyatta-protocols-igmp:querier": {
+              "vyatta-protocols-igmp:querier-timeout": "integer",
+              "vyatta-protocols-igmp:forced": "object"
+            },
+            "vyatta-protocols-igmp:join-group": [
+              {
+                "vyatta-protocols-igmp:source": "string",
+                "vyatta-protocols-igmp:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-igmp:version": "integer",
+            "vyatta-protocols-igmp:query-interval": "integer",
+            "vyatta-protocols-igmp:access-group": "integer",
+            "vyatta-protocols-igmp:last-member-query-count": "integer",
+            "vyatta-protocols-igmp:offlink": "object",
+            "vyatta-protocols-igmp:limit-exception": "integer",
+            "vyatta-protocols-igmp:query-max-response-time": "integer",
+            "vyatta-protocols-igmp:startup-query-interval": "integer",
+            "vyatta-protocols-igmp:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-igmp:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-igmp:robustness-variable": "integer",
+            "vyatta-protocols-igmp:enforce-router-alert": "object",
+            "vyatta-protocols-igmp:last-member-query-interval": "integer"
+          },
+          "vyatta-protocols-ospf:ospf": {
+            "vyatta-protocols-ospf:mtu-ignore": "object",
+            "vyatta-protocols-ospf:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-ospf:priority": "integer",
+            "vyatta-protocols-ospf:hello-interval": "integer",
+            "vyatta-protocols-ospf:dead-interval": "integer",
+            "vyatta-protocols-ospf:retransmit-interval": "integer",
+            "vyatta-protocols-ospf:transmit-delay": "integer",
+            "vyatta-protocols-ospf:cost": "integer"
+          },
+          "vyatta-protocols-rip:rip": {
+            "vyatta-protocols-rip:send": {},
+            "vyatta-protocols-rip:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-rip:receive": {},
+            "vyatta-protocols-rip:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            }
+          },
+          "vyatta-interfaces-dataplane-unnumbered:unnumbered": {
+            "vyatta-interfaces-dataplane-unnumbered:donor-interface": [
+              {
+                "vyatta-interfaces-dataplane-unnumbered:tagnode": "string or null",
+                "vyatta-interfaces-dataplane-unnumbered:preferred-address": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-multicast:multicast": {
+            "vyatta-multicast:ttl-threshold": "integer"
+          },
+          "vyatta-interfaces-dataplane:enable-proxy-arp": "object"
+        },
+        "vyatta-interfaces-bridge:description": "string",
+        "vyatta-interfaces-bridge:disable": "object",
+        "vyatta-interfaces-bridge:aging": "integer",
+        "vyatta-interfaces-bridge:stp": "boolean",
+        "vyatta-interfaces-bridge:address": [
+          "enum or null"
+        ],
+        "vyatta-interfaces-bridge:max-age": "integer"
+      }
+    ],
+    "vyatta-interfaces-vti:vti": [
+      {
+        "vyatta-security-firewall:firewall": {
+          "vyatta-security-firewall:in": [
+            "string"
+          ],
+          "vyatta-security-firewall:out": [
+            "string"
+          ]
+        },
+        "vyatta-interfaces-vti:mtu": "integer",
+        "vyatta-interfaces-vti:ip": {
+          "vyatta-protocols-igmp:igmp": {
+            "vyatta-protocols-igmp:limit": "integer",
+            "vyatta-protocols-igmp:startup-query-count": "integer",
+            "vyatta-protocols-igmp:querier": {
+              "vyatta-protocols-igmp:querier-timeout": "integer",
+              "vyatta-protocols-igmp:forced": "object"
+            },
+            "vyatta-protocols-igmp:join-group": [
+              {
+                "vyatta-protocols-igmp:source": "string",
+                "vyatta-protocols-igmp:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-igmp:version": "integer",
+            "vyatta-protocols-igmp:query-interval": "integer",
+            "vyatta-protocols-igmp:access-group": "integer",
+            "vyatta-protocols-igmp:last-member-query-count": "integer",
+            "vyatta-protocols-igmp:offlink": "object",
+            "vyatta-protocols-igmp:limit-exception": "integer",
+            "vyatta-protocols-igmp:query-max-response-time": "integer",
+            "vyatta-protocols-igmp:startup-query-interval": "integer",
+            "vyatta-protocols-igmp:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-igmp:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-igmp:robustness-variable": "integer",
+            "vyatta-protocols-igmp:enforce-router-alert": "object",
+            "vyatta-protocols-igmp:last-member-query-interval": "integer"
+          },
+          "vyatta-protocols-ospf:ospf": {
+            "vyatta-protocols-ospf:mtu-ignore": "object",
+            "vyatta-protocols-ospf:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-ospf:priority": "integer",
+            "vyatta-protocols-ospf:hello-interval": "integer",
+            "vyatta-protocols-ospf:dead-interval": "integer",
+            "vyatta-protocols-ospf:retransmit-interval": "integer",
+            "vyatta-protocols-ospf:transmit-delay": "integer",
+            "vyatta-protocols-ospf:cost": "integer"
+          },
+          "vyatta-protocols-rip:rip": {
+            "vyatta-protocols-rip:send": {},
+            "vyatta-protocols-rip:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-rip:receive": {},
+            "vyatta-protocols-rip:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            }
+          },
+          "vyatta-interfaces-dataplane-unnumbered:unnumbered": {
+            "vyatta-interfaces-dataplane-unnumbered:donor-interface": [
+              {
+                "vyatta-interfaces-dataplane-unnumbered:tagnode": "string or null",
+                "vyatta-interfaces-dataplane-unnumbered:preferred-address": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-multicast:multicast": {
+            "vyatta-multicast:ttl-threshold": "integer"
+          },
+          "vyatta-interfaces-dataplane:enable-proxy-arp": "object"
+        },
+        "vyatta-interfaces-vti:address": [
+          "string or string"
+        ],
+        "vyatta-interfaces-vti:ipv6": {
+          "vyatta-protocols-ospfv3:ospfv3": {
+            "vyatta-protocols-ospfv3:transmit-delay": "integer",
+            "vyatta-protocols-ospfv3:cost": "integer",
+            "vyatta-protocols-ospfv3:process": [
+              {
+                "vyatta-protocols-ospfv3:instance-id": [
+                  {
+                    "vyatta-protocols-ospfv3:tagnode": "integer",
+                    "vyatta-protocols-ospfv3:transmit-delay": "integer",
+                    "vyatta-protocols-ospfv3:cost": "integer",
+                    "vyatta-protocols-ospfv3:network": [
+                      {}
+                    ],
+                    "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+                    "vyatta-protocols-ospfv3:priority": "integer",
+                    "vyatta-protocols-ospfv3:hello-interval": "integer",
+                    "vyatta-protocols-ospfv3:dead-interval": "integer",
+                    "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+                    "vyatta-protocols-ospfv3:area": "string or integer",
+                    "vyatta-protocols-ospfv3:neighbor": [
+                      {
+                        "vyatta-protocols-ospfv3:tagnode": "string"
+                      }
+                    ]
+                  }
+                ],
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-ospfv3:network": [
+              {}
+            ],
+            "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+            "vyatta-protocols-ospfv3:priority": "integer",
+            "vyatta-protocols-ospfv3:hello-interval": "integer",
+            "vyatta-protocols-ospfv3:mtu-ignore": "object",
+            "vyatta-protocols-ospfv3:dead-interval": "integer",
+            "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+            "vyatta-protocols-ospfv3:area": "string or integer",
+            "vyatta-protocols-ospfv3:neighbor": [
+              {
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim6:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-ipv6-rtradv:dup-addr-detect-transmits": "integer",
+          "vyatta-ipv6-rtradv:disable-forwarding": "object",
+          "vyatta-protocols-mld:mld": {
+            "vyatta-protocols-mld:query-interval": "integer",
+            "vyatta-protocols-mld:robustness-variable": "integer",
+            "vyatta-protocols-mld:version": "integer",
+            "vyatta-protocols-mld:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-mld:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-mld:limit": "integer",
+            "vyatta-protocols-mld:query-max-response-time": "integer",
+            "vyatta-protocols-mld:limit-exception": "string",
+            "vyatta-protocols-mld:access-group": "string",
+            "vyatta-protocols-mld:querier-timeout": "integer",
+            "vyatta-protocols-mld:last-member-query-interval": "integer",
+            "vyatta-protocols-mld:last-member-query-count": "integer"
+          },
+          "vyatta-ipv6-rtradv:address": {
+            "vyatta-ipv6-rtradv:autoconf": "object",
+            "vyatta-ipv6-rtradv:eui64": [
+              "string"
+            ]
+          },
+          "vyatta-protocols-ripng:ripng": {
+            "vyatta-protocols-ripng:metric-offset": "integer",
+            "vyatta-protocols-ripng:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            },
+            "vyatta-protocols-ripng:enable": "object",
+            "vyatta-protocols-ripng:neighbor": "string"
+          },
+          "vyatta-ipv6-rtradv:router-advert": {
+            "vyatta-ipv6-rtradv:min-interval": "integer",
+            "vyatta-ipv6-rtradv:prefix": [
+              {
+                "vyatta-ipv6-rtradv:tagnode": "string",
+                "vyatta-ipv6-rtradv:on-link-flag": "boolean",
+                "vyatta-ipv6-rtradv:preferred-lifetime": "string",
+                "vyatta-ipv6-rtradv:valid-lifetime": "string",
+                "vyatta-ipv6-rtradv:autonomous-flag": "boolean"
+              }
+            ],
+            "vyatta-ipv6-rtradv:default-lifetime": "integer",
+            "vyatta-ipv6-rtradv:link-mtu": "integer",
+            "vyatta-ipv6-rtradv:send-advert": "boolean",
+            "vyatta-ipv6-rtradv:retrans-timer": "integer",
+            "vyatta-ipv6-rtradv:cur-hop-limit": "integer",
+            "vyatta-ipv6-rtradv:other-config-flag": "boolean",
+            "vyatta-ipv6-rtradv:reachable-time": "integer",
+            "vyatta-ipv6-rtradv:managed-flag": "boolean",
+            "vyatta-ipv6-rtradv:max-interval": "integer"
+          }
+        },
+        "vyatta-interfaces-vti:description": "string",
+        "vyatta-interfaces-vti:disable": "object",
+        "vyatta-interfaces-vti:tagnode": "string"
+      }
+    ],
+    "vyatta-interfaces-openvpn:openvpn": [
+      {
+        "vyatta-interfaces-openvpn:tagnode": "string",
+        "vyatta-interfaces-openvpn:local-host": "string",
+        "vyatta-interfaces-openvpn:remote-host": [
+          "string"
+        ],
+        "vyatta-security-firewall:firewall": {
+          "vyatta-security-firewall:in": [
+            "string"
+          ],
+          "vyatta-security-firewall:out": [
+            "string"
+          ]
+        },
+        "vyatta-ssl-vpn-bundler:client-bundle": {
+          "vyatta-ssl-vpn-bundler:linux": "object",
+          "vyatta-ssl-vpn-bundler:generic": "object",
+          "vyatta-ssl-vpn-bundler:osx": "object",
+          "vyatta-ssl-vpn-bundler:windows": "object"
+        },
+        "vyatta-interfaces-openvpn:local-port": "integer",
+        "vyatta-interfaces-openvpn:ipv6": {
+          "vyatta-protocols-ospfv3:ospfv3": {
+            "vyatta-protocols-ospfv3:transmit-delay": "integer",
+            "vyatta-protocols-ospfv3:cost": "integer",
+            "vyatta-protocols-ospfv3:process": [
+              {
+                "vyatta-protocols-ospfv3:instance-id": [
+                  {
+                    "vyatta-protocols-ospfv3:tagnode": "integer",
+                    "vyatta-protocols-ospfv3:transmit-delay": "integer",
+                    "vyatta-protocols-ospfv3:cost": "integer",
+                    "vyatta-protocols-ospfv3:network": [
+                      {}
+                    ],
+                    "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+                    "vyatta-protocols-ospfv3:priority": "integer",
+                    "vyatta-protocols-ospfv3:hello-interval": "integer",
+                    "vyatta-protocols-ospfv3:dead-interval": "integer",
+                    "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+                    "vyatta-protocols-ospfv3:area": "string or integer",
+                    "vyatta-protocols-ospfv3:neighbor": [
+                      {
+                        "vyatta-protocols-ospfv3:tagnode": "string"
+                      }
+                    ]
+                  }
+                ],
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-ospfv3:network": [
+              {}
+            ],
+            "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+            "vyatta-protocols-ospfv3:priority": "integer",
+            "vyatta-protocols-ospfv3:hello-interval": "integer",
+            "vyatta-protocols-ospfv3:mtu-ignore": "object",
+            "vyatta-protocols-ospfv3:dead-interval": "integer",
+            "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+            "vyatta-protocols-ospfv3:area": "string or integer",
+            "vyatta-protocols-ospfv3:neighbor": [
+              {
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim6:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-ipv6-rtradv:dup-addr-detect-transmits": "integer",
+          "vyatta-ipv6-rtradv:disable-forwarding": "object",
+          "vyatta-protocols-mld:mld": {
+            "vyatta-protocols-mld:query-interval": "integer",
+            "vyatta-protocols-mld:robustness-variable": "integer",
+            "vyatta-protocols-mld:version": "integer",
+            "vyatta-protocols-mld:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-mld:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-mld:limit": "integer",
+            "vyatta-protocols-mld:query-max-response-time": "integer",
+            "vyatta-protocols-mld:limit-exception": "string",
+            "vyatta-protocols-mld:access-group": "string",
+            "vyatta-protocols-mld:querier-timeout": "integer",
+            "vyatta-protocols-mld:last-member-query-interval": "integer",
+            "vyatta-protocols-mld:last-member-query-count": "integer"
+          },
+          "vyatta-ipv6-rtradv:address": {
+            "vyatta-ipv6-rtradv:autoconf": "object",
+            "vyatta-ipv6-rtradv:eui64": [
+              "string"
+            ]
+          },
+          "vyatta-protocols-ripng:ripng": {
+            "vyatta-protocols-ripng:metric-offset": "integer",
+            "vyatta-protocols-ripng:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            },
+            "vyatta-protocols-ripng:enable": "object",
+            "vyatta-protocols-ripng:neighbor": "string"
+          },
+          "vyatta-ipv6-rtradv:router-advert": {
+            "vyatta-ipv6-rtradv:min-interval": "integer",
+            "vyatta-ipv6-rtradv:prefix": [
+              {
+                "vyatta-ipv6-rtradv:tagnode": "string",
+                "vyatta-ipv6-rtradv:on-link-flag": "boolean",
+                "vyatta-ipv6-rtradv:preferred-lifetime": "string",
+                "vyatta-ipv6-rtradv:valid-lifetime": "string",
+                "vyatta-ipv6-rtradv:autonomous-flag": "boolean"
+              }
+            ],
+            "vyatta-ipv6-rtradv:default-lifetime": "integer",
+            "vyatta-ipv6-rtradv:link-mtu": "integer",
+            "vyatta-ipv6-rtradv:send-advert": "boolean",
+            "vyatta-ipv6-rtradv:retrans-timer": "integer",
+            "vyatta-ipv6-rtradv:cur-hop-limit": "integer",
+            "vyatta-ipv6-rtradv:other-config-flag": "boolean",
+            "vyatta-ipv6-rtradv:reachable-time": "integer",
+            "vyatta-ipv6-rtradv:managed-flag": "boolean",
+            "vyatta-ipv6-rtradv:max-interval": "integer"
+          }
+        },
+        "vyatta-interfaces-openvpn:openvpn-option": [
+          "string"
+        ],
+        "vyatta-interfaces-openvpn:remote-port": "integer",
+        "vyatta-interfaces-openvpn:description": "string",
+        "vyatta-interfaces-openvpn:tls": {
+          "vyatta-interfaces-openvpn:dh-file": "string",
+          "vyatta-interfaces-openvpn:cert-file": "string",
+          "vyatta-interfaces-openvpn:key-file": "string",
+          "vyatta-interfaces-openvpn:crl-file": "string",
+          "vyatta-interfaces-openvpn:ca-cert-file": "string"
+        },
+        "vyatta-interfaces-openvpn:device-type": "string",
+        "vyatta-interfaces-openvpn:local-address": "string",
+        "vyatta-openvpn-access-server:remote-configuration": {
+          "vyatta-openvpn-access-server:username": "string",
+          "vyatta-openvpn-access-server:server": "string",
+          "vyatta-openvpn-access-server:tunnel-password": "string",
+          "vyatta-openvpn-access-server:tunnel-username": "string",
+          "vyatta-openvpn-access-server:password": "string"
+        },
+        "vyatta-interfaces-openvpn:disable": "object",
+        "vyatta-interfaces-openvpn:auth": {
+          "vyatta-interfaces-openvpn:ldap": [
+            "string"
+          ],
+          "vyatta-interfaces-openvpn:local": {
+            "vyatta-interfaces-openvpn:user": [
+              "string"
+            ],
+            "vyatta-interfaces-openvpn:group": [
+              "string"
+            ]
+          }
+        },
+        "vyatta-interfaces-openvpn:server": {
+          "vyatta-interfaces-openvpn:name-server": [
+            "string"
+          ],
+          "vyatta-interfaces-openvpn:domain-name": "string",
+          "vyatta-interfaces-openvpn:subnet": "string",
+          "vyatta-interfaces-openvpn:client": [
+            {
+              "vyatta-interfaces-openvpn:tagnode": "string",
+              "vyatta-interfaces-openvpn:subnet": [
+                "string"
+              ],
+              "vyatta-interfaces-openvpn:disable": "object",
+              "vyatta-interfaces-openvpn:ip": "string",
+              "vyatta-interfaces-openvpn:push-route": [
+                "string"
+              ]
+            }
+          ],
+          "vyatta-interfaces-openvpn:max-connections": "integer",
+          "vyatta-interfaces-openvpn:push-route": [
+            "string"
+          ]
+        },
+        "vyatta-interfaces-openvpn:ip": {
+          "vyatta-protocols-igmp:igmp": {
+            "vyatta-protocols-igmp:limit": "integer",
+            "vyatta-protocols-igmp:startup-query-count": "integer",
+            "vyatta-protocols-igmp:querier": {
+              "vyatta-protocols-igmp:querier-timeout": "integer",
+              "vyatta-protocols-igmp:forced": "object"
+            },
+            "vyatta-protocols-igmp:join-group": [
+              {
+                "vyatta-protocols-igmp:source": "string",
+                "vyatta-protocols-igmp:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-igmp:version": "integer",
+            "vyatta-protocols-igmp:query-interval": "integer",
+            "vyatta-protocols-igmp:access-group": "integer",
+            "vyatta-protocols-igmp:last-member-query-count": "integer",
+            "vyatta-protocols-igmp:offlink": "object",
+            "vyatta-protocols-igmp:limit-exception": "integer",
+            "vyatta-protocols-igmp:query-max-response-time": "integer",
+            "vyatta-protocols-igmp:startup-query-interval": "integer",
+            "vyatta-protocols-igmp:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-igmp:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-igmp:robustness-variable": "integer",
+            "vyatta-protocols-igmp:enforce-router-alert": "object",
+            "vyatta-protocols-igmp:last-member-query-interval": "integer"
+          },
+          "vyatta-protocols-ospf:ospf": {
+            "vyatta-protocols-ospf:mtu-ignore": "object",
+            "vyatta-protocols-ospf:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-ospf:priority": "integer",
+            "vyatta-protocols-ospf:hello-interval": "integer",
+            "vyatta-protocols-ospf:dead-interval": "integer",
+            "vyatta-protocols-ospf:retransmit-interval": "integer",
+            "vyatta-protocols-ospf:transmit-delay": "integer",
+            "vyatta-protocols-ospf:cost": "integer"
+          },
+          "vyatta-protocols-rip:rip": {
+            "vyatta-protocols-rip:send": {},
+            "vyatta-protocols-rip:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-rip:receive": {},
+            "vyatta-protocols-rip:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            }
+          },
+          "vyatta-interfaces-dataplane-unnumbered:unnumbered": {
+            "vyatta-interfaces-dataplane-unnumbered:donor-interface": [
+              {
+                "vyatta-interfaces-dataplane-unnumbered:tagnode": "string or null",
+                "vyatta-interfaces-dataplane-unnumbered:preferred-address": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-multicast:multicast": {
+            "vyatta-multicast:ttl-threshold": "integer"
+          },
+          "vyatta-interfaces-dataplane:enable-proxy-arp": "object"
+        },
+        "vyatta-interfaces-openvpn:replace-default-route": {
+          "vyatta-interfaces-openvpn:local": "object"
+        },
+        "vyatta-interfaces-openvpn:shared-secret-key-file": "string",
+        "vyatta-interfaces-openvpn:remote-address": "string",
+        "vyatta-interfaces-openvpn:client-cert-not-required": "object"
+      }
+    ],
+    "vyatta-interfaces-tunnel:tunnel": [
+      {
+        "vyatta-interfaces-tunnel:disable": "object",
+        "vyatta-interfaces-tunnel:parameters": {
+          "vyatta-interfaces-tunnel:ip": {
+            "vyatta-protocols-igmp:igmp": {
+              "vyatta-protocols-igmp:limit": "integer",
+              "vyatta-protocols-igmp:startup-query-count": "integer",
+              "vyatta-protocols-igmp:querier": {
+                "vyatta-protocols-igmp:querier-timeout": "integer",
+                "vyatta-protocols-igmp:forced": "object"
+              },
+              "vyatta-protocols-igmp:join-group": [
+                {
+                  "vyatta-protocols-igmp:source": "string",
+                  "vyatta-protocols-igmp:tagnode": "string"
+                }
+              ],
+              "vyatta-protocols-igmp:version": "integer",
+              "vyatta-protocols-igmp:query-interval": "integer",
+              "vyatta-protocols-igmp:access-group": "integer",
+              "vyatta-protocols-igmp:last-member-query-count": "integer",
+              "vyatta-protocols-igmp:offlink": "object",
+              "vyatta-protocols-igmp:limit-exception": "integer",
+              "vyatta-protocols-igmp:query-max-response-time": "integer",
+              "vyatta-protocols-igmp:startup-query-interval": "integer",
+              "vyatta-protocols-igmp:static-group": [
+                {
+                  "vyatta-protocols-mld:tagnode": "string",
+                  "vyatta-protocols-mld:source": [
+                    "string"
+                  ]
+                }
+              ],
+              "vyatta-protocols-igmp:immediate-leave": {
+                "vyatta-protocols-mld:group-list": "string"
+              },
+              "vyatta-protocols-igmp:robustness-variable": "integer",
+              "vyatta-protocols-igmp:enforce-router-alert": "object",
+              "vyatta-protocols-igmp:last-member-query-interval": "integer"
+            },
+            "vyatta-protocols-ospf:ospf": {
+              "vyatta-protocols-ospf:mtu-ignore": "object",
+              "vyatta-protocols-ospf:authentication": {
+                "vyatta-vrrp:password": "string"
+              },
+              "vyatta-protocols-ospf:priority": "integer",
+              "vyatta-protocols-ospf:hello-interval": "integer",
+              "vyatta-protocols-ospf:dead-interval": "integer",
+              "vyatta-protocols-ospf:retransmit-interval": "integer",
+              "vyatta-protocols-ospf:transmit-delay": "integer",
+              "vyatta-protocols-ospf:cost": "integer"
+            },
+            "vyatta-protocols-rip:rip": {
+              "vyatta-protocols-rip:send": {},
+              "vyatta-protocols-rip:authentication": {
+                "vyatta-vrrp:password": "string"
+              },
+              "vyatta-protocols-rip:receive": {},
+              "vyatta-protocols-rip:split-horizon": {
+                "vyatta-protocols-ripng:poison-reverse": "object",
+                "vyatta-protocols-ripng:disable": "object"
+              }
+            },
+            "vyatta-interfaces-dataplane-unnumbered:unnumbered": {
+              "vyatta-interfaces-dataplane-unnumbered:donor-interface": [
+                {
+                  "vyatta-interfaces-dataplane-unnumbered:tagnode": "string or null",
+                  "vyatta-interfaces-dataplane-unnumbered:preferred-address": "string"
+                }
+              ]
+            },
+            "vyatta-protocols-pim:pim": {
+              "vyatta-protocols-pim6:hello-interval": "integer",
+              "vyatta-protocols-pim6:neighbor-filter": "string",
+              "vyatta-protocols-pim6:state-refresh": {
+                "vyatta-protocols-pim6:origination-interval": "integer"
+              },
+              "vyatta-protocols-pim6:unicast-bsm": "object",
+              "vyatta-protocols-pim6:exclude-genid": "object",
+              "vyatta-protocols-pim6:hello-holdtime": "integer",
+              "vyatta-protocols-pim6:bsr-border": "object",
+              "vyatta-protocols-pim6:dr-priority": "integer"
+            },
+            "vyatta-multicast:multicast": {
+              "vyatta-multicast:ttl-threshold": "integer"
+            },
+            "vyatta-interfaces-dataplane:enable-proxy-arp": "object"
+          },
+          "vyatta-interfaces-tunnel:ipv6": {
+            "vyatta-protocols-ospfv3:ospfv3": {
+              "vyatta-protocols-ospfv3:transmit-delay": "integer",
+              "vyatta-protocols-ospfv3:cost": "integer",
+              "vyatta-protocols-ospfv3:process": [
+                {
+                  "vyatta-protocols-ospfv3:instance-id": [
+                    {
+                      "vyatta-protocols-ospfv3:tagnode": "integer",
+                      "vyatta-protocols-ospfv3:transmit-delay": "integer",
+                      "vyatta-protocols-ospfv3:cost": "integer",
+                      "vyatta-protocols-ospfv3:network": [
+                        {}
+                      ],
+                      "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+                      "vyatta-protocols-ospfv3:priority": "integer",
+                      "vyatta-protocols-ospfv3:hello-interval": "integer",
+                      "vyatta-protocols-ospfv3:dead-interval": "integer",
+                      "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+                      "vyatta-protocols-ospfv3:area": "string or integer",
+                      "vyatta-protocols-ospfv3:neighbor": [
+                        {
+                          "vyatta-protocols-ospfv3:tagnode": "string"
+                        }
+                      ]
+                    }
+                  ],
+                  "vyatta-protocols-ospfv3:tagnode": "string"
+                }
+              ],
+              "vyatta-protocols-ospfv3:network": [
+                {}
+              ],
+              "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+              "vyatta-protocols-ospfv3:priority": "integer",
+              "vyatta-protocols-ospfv3:hello-interval": "integer",
+              "vyatta-protocols-ospfv3:mtu-ignore": "object",
+              "vyatta-protocols-ospfv3:dead-interval": "integer",
+              "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+              "vyatta-protocols-ospfv3:area": "string or integer",
+              "vyatta-protocols-ospfv3:neighbor": [
+                {
+                  "vyatta-protocols-ospfv3:tagnode": "string"
+                }
+              ]
+            },
+            "vyatta-protocols-pim6:pim": {
+              "vyatta-protocols-pim6:hello-interval": "integer",
+              "vyatta-protocols-pim6:neighbor-filter": "string",
+              "vyatta-protocols-pim6:state-refresh": {
+                "vyatta-protocols-pim6:origination-interval": "integer"
+              },
+              "vyatta-protocols-pim6:unicast-bsm": "object",
+              "vyatta-protocols-pim6:exclude-genid": "object",
+              "vyatta-protocols-pim6:hello-holdtime": "integer",
+              "vyatta-protocols-pim6:bsr-border": "object",
+              "vyatta-protocols-pim6:dr-priority": "integer"
+            },
+            "vyatta-ipv6-rtradv:dup-addr-detect-transmits": "integer",
+            "vyatta-ipv6-rtradv:disable-forwarding": "object",
+            "vyatta-protocols-mld:mld": {
+              "vyatta-protocols-mld:query-interval": "integer",
+              "vyatta-protocols-mld:robustness-variable": "integer",
+              "vyatta-protocols-mld:version": "integer",
+              "vyatta-protocols-mld:static-group": [
+                {
+                  "vyatta-protocols-mld:tagnode": "string",
+                  "vyatta-protocols-mld:source": [
+                    "string"
+                  ]
+                }
+              ],
+              "vyatta-protocols-mld:immediate-leave": {
+                "vyatta-protocols-mld:group-list": "string"
+              },
+              "vyatta-protocols-mld:limit": "integer",
+              "vyatta-protocols-mld:query-max-response-time": "integer",
+              "vyatta-protocols-mld:limit-exception": "string",
+              "vyatta-protocols-mld:access-group": "string",
+              "vyatta-protocols-mld:querier-timeout": "integer",
+              "vyatta-protocols-mld:last-member-query-interval": "integer",
+              "vyatta-protocols-mld:last-member-query-count": "integer"
+            },
+            "vyatta-ipv6-rtradv:address": {
+              "vyatta-ipv6-rtradv:autoconf": "object",
+              "vyatta-ipv6-rtradv:eui64": [
+                "string"
+              ]
+            },
+            "vyatta-protocols-ripng:ripng": {
+              "vyatta-protocols-ripng:metric-offset": "integer",
+              "vyatta-protocols-ripng:split-horizon": {
+                "vyatta-protocols-ripng:poison-reverse": "object",
+                "vyatta-protocols-ripng:disable": "object"
+              },
+              "vyatta-protocols-ripng:enable": "object",
+              "vyatta-protocols-ripng:neighbor": "string"
+            },
+            "vyatta-ipv6-rtradv:router-advert": {
+              "vyatta-ipv6-rtradv:min-interval": "integer",
+              "vyatta-ipv6-rtradv:prefix": [
+                {
+                  "vyatta-ipv6-rtradv:tagnode": "string",
+                  "vyatta-ipv6-rtradv:on-link-flag": "boolean",
+                  "vyatta-ipv6-rtradv:preferred-lifetime": "string",
+                  "vyatta-ipv6-rtradv:valid-lifetime": "string",
+                  "vyatta-ipv6-rtradv:autonomous-flag": "boolean"
+                }
+              ],
+              "vyatta-ipv6-rtradv:default-lifetime": "integer",
+              "vyatta-ipv6-rtradv:link-mtu": "integer",
+              "vyatta-ipv6-rtradv:send-advert": "boolean",
+              "vyatta-ipv6-rtradv:retrans-timer": "integer",
+              "vyatta-ipv6-rtradv:cur-hop-limit": "integer",
+              "vyatta-ipv6-rtradv:other-config-flag": "boolean",
+              "vyatta-ipv6-rtradv:reachable-time": "integer",
+              "vyatta-ipv6-rtradv:managed-flag": "boolean",
+              "vyatta-ipv6-rtradv:max-interval": "integer"
+            }
+          }
+        },
+        "vyatta-interfaces-tunnel:ip": {
+          "vyatta-protocols-igmp:igmp": {
+            "vyatta-protocols-igmp:limit": "integer",
+            "vyatta-protocols-igmp:startup-query-count": "integer",
+            "vyatta-protocols-igmp:querier": {
+              "vyatta-protocols-igmp:querier-timeout": "integer",
+              "vyatta-protocols-igmp:forced": "object"
+            },
+            "vyatta-protocols-igmp:join-group": [
+              {
+                "vyatta-protocols-igmp:source": "string",
+                "vyatta-protocols-igmp:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-igmp:version": "integer",
+            "vyatta-protocols-igmp:query-interval": "integer",
+            "vyatta-protocols-igmp:access-group": "integer",
+            "vyatta-protocols-igmp:last-member-query-count": "integer",
+            "vyatta-protocols-igmp:offlink": "object",
+            "vyatta-protocols-igmp:limit-exception": "integer",
+            "vyatta-protocols-igmp:query-max-response-time": "integer",
+            "vyatta-protocols-igmp:startup-query-interval": "integer",
+            "vyatta-protocols-igmp:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-igmp:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-igmp:robustness-variable": "integer",
+            "vyatta-protocols-igmp:enforce-router-alert": "object",
+            "vyatta-protocols-igmp:last-member-query-interval": "integer"
+          },
+          "vyatta-protocols-ospf:ospf": {
+            "vyatta-protocols-ospf:mtu-ignore": "object",
+            "vyatta-protocols-ospf:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-ospf:priority": "integer",
+            "vyatta-protocols-ospf:hello-interval": "integer",
+            "vyatta-protocols-ospf:dead-interval": "integer",
+            "vyatta-protocols-ospf:retransmit-interval": "integer",
+            "vyatta-protocols-ospf:transmit-delay": "integer",
+            "vyatta-protocols-ospf:cost": "integer"
+          },
+          "vyatta-protocols-rip:rip": {
+            "vyatta-protocols-rip:send": {},
+            "vyatta-protocols-rip:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-rip:receive": {},
+            "vyatta-protocols-rip:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            }
+          },
+          "vyatta-interfaces-dataplane-unnumbered:unnumbered": {
+            "vyatta-interfaces-dataplane-unnumbered:donor-interface": [
+              {
+                "vyatta-interfaces-dataplane-unnumbered:tagnode": "string or null",
+                "vyatta-interfaces-dataplane-unnumbered:preferred-address": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-multicast:multicast": {
+            "vyatta-multicast:ttl-threshold": "integer"
+          },
+          "vyatta-interfaces-dataplane:enable-proxy-arp": "object"
+        },
+        "vyatta-security-firewall:firewall": {
+          "vyatta-security-firewall:in": [
+            "string"
+          ],
+          "vyatta-security-firewall:out": [
+            "string"
+          ]
+        },
+        "vyatta-interfaces-tunnel:address": [
+          "string or string"
+        ],
+        "vyatta-interfaces-tunnel:disable-link-detect": "object",
+        "vyatta-interfaces-tunnel:description": "string",
+        "vyatta-interfaces-tunnel:encapsulation": "string",
+        "vyatta-interfaces-tunnel:tagnode": "string",
+        "vyatta-interfaces-tunnel:mtu": "integer",
+        "vyatta-interfaces-tunnel:ipv6": {
+          "vyatta-protocols-ospfv3:ospfv3": {
+            "vyatta-protocols-ospfv3:transmit-delay": "integer",
+            "vyatta-protocols-ospfv3:cost": "integer",
+            "vyatta-protocols-ospfv3:process": [
+              {
+                "vyatta-protocols-ospfv3:instance-id": [
+                  {
+                    "vyatta-protocols-ospfv3:tagnode": "integer",
+                    "vyatta-protocols-ospfv3:transmit-delay": "integer",
+                    "vyatta-protocols-ospfv3:cost": "integer",
+                    "vyatta-protocols-ospfv3:network": [
+                      {}
+                    ],
+                    "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+                    "vyatta-protocols-ospfv3:priority": "integer",
+                    "vyatta-protocols-ospfv3:hello-interval": "integer",
+                    "vyatta-protocols-ospfv3:dead-interval": "integer",
+                    "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+                    "vyatta-protocols-ospfv3:area": "string or integer",
+                    "vyatta-protocols-ospfv3:neighbor": [
+                      {
+                        "vyatta-protocols-ospfv3:tagnode": "string"
+                      }
+                    ]
+                  }
+                ],
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-ospfv3:network": [
+              {}
+            ],
+            "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+            "vyatta-protocols-ospfv3:priority": "integer",
+            "vyatta-protocols-ospfv3:hello-interval": "integer",
+            "vyatta-protocols-ospfv3:mtu-ignore": "object",
+            "vyatta-protocols-ospfv3:dead-interval": "integer",
+            "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+            "vyatta-protocols-ospfv3:area": "string or integer",
+            "vyatta-protocols-ospfv3:neighbor": [
+              {
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim6:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-ipv6-rtradv:dup-addr-detect-transmits": "integer",
+          "vyatta-ipv6-rtradv:disable-forwarding": "object",
+          "vyatta-protocols-mld:mld": {
+            "vyatta-protocols-mld:query-interval": "integer",
+            "vyatta-protocols-mld:robustness-variable": "integer",
+            "vyatta-protocols-mld:version": "integer",
+            "vyatta-protocols-mld:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-mld:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-mld:limit": "integer",
+            "vyatta-protocols-mld:query-max-response-time": "integer",
+            "vyatta-protocols-mld:limit-exception": "string",
+            "vyatta-protocols-mld:access-group": "string",
+            "vyatta-protocols-mld:querier-timeout": "integer",
+            "vyatta-protocols-mld:last-member-query-interval": "integer",
+            "vyatta-protocols-mld:last-member-query-count": "integer"
+          },
+          "vyatta-ipv6-rtradv:address": {
+            "vyatta-ipv6-rtradv:autoconf": "object",
+            "vyatta-ipv6-rtradv:eui64": [
+              "string"
+            ]
+          },
+          "vyatta-protocols-ripng:ripng": {
+            "vyatta-protocols-ripng:metric-offset": "integer",
+            "vyatta-protocols-ripng:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            },
+            "vyatta-protocols-ripng:enable": "object",
+            "vyatta-protocols-ripng:neighbor": "string"
+          },
+          "vyatta-ipv6-rtradv:router-advert": {
+            "vyatta-ipv6-rtradv:min-interval": "integer",
+            "vyatta-ipv6-rtradv:prefix": [
+              {
+                "vyatta-ipv6-rtradv:tagnode": "string",
+                "vyatta-ipv6-rtradv:on-link-flag": "boolean",
+                "vyatta-ipv6-rtradv:preferred-lifetime": "string",
+                "vyatta-ipv6-rtradv:valid-lifetime": "string",
+                "vyatta-ipv6-rtradv:autonomous-flag": "boolean"
+              }
+            ],
+            "vyatta-ipv6-rtradv:default-lifetime": "integer",
+            "vyatta-ipv6-rtradv:link-mtu": "integer",
+            "vyatta-ipv6-rtradv:send-advert": "boolean",
+            "vyatta-ipv6-rtradv:retrans-timer": "integer",
+            "vyatta-ipv6-rtradv:cur-hop-limit": "integer",
+            "vyatta-ipv6-rtradv:other-config-flag": "boolean",
+            "vyatta-ipv6-rtradv:reachable-time": "integer",
+            "vyatta-ipv6-rtradv:managed-flag": "boolean",
+            "vyatta-ipv6-rtradv:max-interval": "integer"
+          }
+        },
+        "vyatta-interfaces-tunnel:remote-ip": "string or string",
+        "vyatta-interfaces-tunnel:local-ip": "string or string",
+        "vyatta-nhrp:nhrp": {
+          "vyatta-nhrp:map": [
+            {
+              "vyatta-nhrp:register": "object",
+              "vyatta-nhrp:nbma-address": "string",
+              "vyatta-nhrp:tagnode": "string",
+              "vyatta-nhrp:register-no-unique": "object"
+            }
+          ],
+          "vyatta-nhrp:holding-time": "integer",
+          "vyatta-nhrp:authentication": {
+            "vyatta-vrrp:password": "string"
+          },
+          "vyatta-nhrp:shortcut-destination": "object",
+          "vyatta-nhrp:dynamic-map": {
+            "vyatta-nhrp:protocol-address": "string",
+            "vyatta-nhrp:nbma-domain": "string"
+          },
+          "vyatta-nhrp:redirect": "object",
+          "vyatta-nhrp:shortcut": "object",
+          "vyatta-nhrp:shortcut-target": {
+            "vyatta-nhrp:holding-time": "integer",
+            "vyatta-nhrp:protocol-address": "string"
+          },
+          "vyatta-nhrp:multicast": {
+            "vyatta-multicast:ttl-threshold": "integer"
+          }
+        },
+        "vyatta-interfaces-tunnel:path-mtu-discovery-disable": "object"
+      }
+    ],
+    "vyatta-interfaces-dataplane:dataplane": [
+      {
+        "vyatta-interfaces-dataplane:mtu": "integer",
+        "vyatta-interfaces-dataplane:disable": "object",
+        "vyatta-security-firewall:firewall": {
+          "vyatta-security-firewall:in": [
+            "string"
+          ],
+          "vyatta-security-firewall:out": [
+            "string"
+          ]
+        },
+        "vyatta-interfaces-dataplane:log_martians": "object",
+        "vyatta-policy-pbr:policy": {
+          "vyatta-policy-pbr:route": [
+            "string"
+          ]
+        },
+        "vyatta-interfaces-dataplane:disable-link-detect": "object",
+        "vyatta-interfaces-dataplane:tagnode": "string or string or string",
+        "vyatta-interfaces-dataplane:ip": {
+          "vyatta-protocols-igmp:igmp": {
+            "vyatta-protocols-igmp:limit": "integer",
+            "vyatta-protocols-igmp:startup-query-count": "integer",
+            "vyatta-protocols-igmp:querier": {
+              "vyatta-protocols-igmp:querier-timeout": "integer",
+              "vyatta-protocols-igmp:forced": "object"
+            },
+            "vyatta-protocols-igmp:join-group": [
+              {
+                "vyatta-protocols-igmp:source": "string",
+                "vyatta-protocols-igmp:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-igmp:version": "integer",
+            "vyatta-protocols-igmp:query-interval": "integer",
+            "vyatta-protocols-igmp:access-group": "integer",
+            "vyatta-protocols-igmp:last-member-query-count": "integer",
+            "vyatta-protocols-igmp:offlink": "object",
+            "vyatta-protocols-igmp:limit-exception": "integer",
+            "vyatta-protocols-igmp:query-max-response-time": "integer",
+            "vyatta-protocols-igmp:startup-query-interval": "integer",
+            "vyatta-protocols-igmp:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-igmp:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-igmp:robustness-variable": "integer",
+            "vyatta-protocols-igmp:enforce-router-alert": "object",
+            "vyatta-protocols-igmp:last-member-query-interval": "integer"
+          },
+          "vyatta-protocols-ospf:ospf": {
+            "vyatta-protocols-ospf:mtu-ignore": "object",
+            "vyatta-protocols-ospf:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-ospf:priority": "integer",
+            "vyatta-protocols-ospf:hello-interval": "integer",
+            "vyatta-protocols-ospf:dead-interval": "integer",
+            "vyatta-protocols-ospf:retransmit-interval": "integer",
+            "vyatta-protocols-ospf:transmit-delay": "integer",
+            "vyatta-protocols-ospf:cost": "integer"
+          },
+          "vyatta-protocols-rip:rip": {
+            "vyatta-protocols-rip:send": {},
+            "vyatta-protocols-rip:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-rip:receive": {},
+            "vyatta-protocols-rip:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            }
+          },
+          "vyatta-interfaces-dataplane-unnumbered:unnumbered": {
+            "vyatta-interfaces-dataplane-unnumbered:donor-interface": [
+              {
+                "vyatta-interfaces-dataplane-unnumbered:tagnode": "string or null",
+                "vyatta-interfaces-dataplane-unnumbered:preferred-address": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-multicast:multicast": {
+            "vyatta-multicast:ttl-threshold": "integer"
+          },
+          "vyatta-interfaces-dataplane:enable-proxy-arp": "object"
+        },
+        "vyatta-vrrp:vrrp": {
+          "vyatta-vrrp:vrrp-group": [
+            {
+              "vyatta-vrrp:advertise-interval": "integer",
+              "vyatta-vrrp:preempt-delay": "integer",
+              "vyatta-vrrp:hello-source-address": "string or string",
+              "vyatta-vrrp:authentication": {
+                "vyatta-vrrp:password": "string"
+              },
+              "vyatta-vrrp:run-transition-scripts": {
+                "vyatta-vrrp:fault": "string",
+                "vyatta-vrrp:backup": "string",
+                "vyatta-vrrp:master": "string"
+              },
+              "vyatta-vrrp:preempt": "boolean",
+              "vyatta-vrrp:virtual-address": [
+                "string"
+              ],
+              "vyatta-vrrp:rfc3768-compatibility": "object",
+              "vyatta-vrrp:disable": "object",
+              "vyatta-vrrp:sync-group": "string",
+              "vyatta-vrrp:description": "string",
+              "vyatta-vrrp:priority": "integer",
+              "vyatta-vrrp:tagnode": "integer",
+              "vyatta-vrrp:notify": {
+                "vyatta-vrrp:bgp": "object",
+                "vyatta-vrrp:ipsec": "object"
+              }
+            }
+          ]
+        },
+        "vyatta-interfaces-dataplane:sflow": "object",
+        "vyatta-interfaces-dataplane:mac": "string",
+        "vyatta-interfaces-dataplane:bridge-group": {
+          "vyatta-interfaces-dataplane:bridge": "string",
+          "vyatta-interfaces-dataplane:cost": "integer",
+          "vyatta-interfaces-dataplane:bpdu-guard": "object",
+          "vyatta-interfaces-dataplane:priority": "integer",
+          "vyatta-interfaces-dataplane:root-block": "object"
+        },
+        "vyatta-interfaces-dataplane:dhcpv6-options": {
+          "vyatta-interfaces-dataplane:temporary": "object",
+          "vyatta-interfaces-dataplane:parameters-only": "object"
+        },
+        "vyatta-interfaces-dataplane:ipv6": {
+          "vyatta-protocols-ospfv3:ospfv3": {
+            "vyatta-protocols-ospfv3:transmit-delay": "integer",
+            "vyatta-protocols-ospfv3:cost": "integer",
+            "vyatta-protocols-ospfv3:process": [
+              {
+                "vyatta-protocols-ospfv3:instance-id": [
+                  {
+                    "vyatta-protocols-ospfv3:tagnode": "integer",
+                    "vyatta-protocols-ospfv3:transmit-delay": "integer",
+                    "vyatta-protocols-ospfv3:cost": "integer",
+                    "vyatta-protocols-ospfv3:network": [
+                      {}
+                    ],
+                    "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+                    "vyatta-protocols-ospfv3:priority": "integer",
+                    "vyatta-protocols-ospfv3:hello-interval": "integer",
+                    "vyatta-protocols-ospfv3:dead-interval": "integer",
+                    "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+                    "vyatta-protocols-ospfv3:area": "string or integer",
+                    "vyatta-protocols-ospfv3:neighbor": [
+                      {
+                        "vyatta-protocols-ospfv3:tagnode": "string"
+                      }
+                    ]
+                  }
+                ],
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-ospfv3:network": [
+              {}
+            ],
+            "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+            "vyatta-protocols-ospfv3:priority": "integer",
+            "vyatta-protocols-ospfv3:hello-interval": "integer",
+            "vyatta-protocols-ospfv3:mtu-ignore": "object",
+            "vyatta-protocols-ospfv3:dead-interval": "integer",
+            "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+            "vyatta-protocols-ospfv3:area": "string or integer",
+            "vyatta-protocols-ospfv3:neighbor": [
+              {
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim6:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-ipv6-rtradv:dup-addr-detect-transmits": "integer",
+          "vyatta-ipv6-rtradv:disable-forwarding": "object",
+          "vyatta-protocols-mld:mld": {
+            "vyatta-protocols-mld:query-interval": "integer",
+            "vyatta-protocols-mld:robustness-variable": "integer",
+            "vyatta-protocols-mld:version": "integer",
+            "vyatta-protocols-mld:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-mld:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-mld:limit": "integer",
+            "vyatta-protocols-mld:query-max-response-time": "integer",
+            "vyatta-protocols-mld:limit-exception": "string",
+            "vyatta-protocols-mld:access-group": "string",
+            "vyatta-protocols-mld:querier-timeout": "integer",
+            "vyatta-protocols-mld:last-member-query-interval": "integer",
+            "vyatta-protocols-mld:last-member-query-count": "integer"
+          },
+          "vyatta-ipv6-rtradv:address": {
+            "vyatta-ipv6-rtradv:autoconf": "object",
+            "vyatta-ipv6-rtradv:eui64": [
+              "string"
+            ]
+          },
+          "vyatta-protocols-ripng:ripng": {
+            "vyatta-protocols-ripng:metric-offset": "integer",
+            "vyatta-protocols-ripng:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            },
+            "vyatta-protocols-ripng:enable": "object",
+            "vyatta-protocols-ripng:neighbor": "string"
+          },
+          "vyatta-ipv6-rtradv:router-advert": {
+            "vyatta-ipv6-rtradv:min-interval": "integer",
+            "vyatta-ipv6-rtradv:prefix": [
+              {
+                "vyatta-ipv6-rtradv:tagnode": "string",
+                "vyatta-ipv6-rtradv:on-link-flag": "boolean",
+                "vyatta-ipv6-rtradv:preferred-lifetime": "string",
+                "vyatta-ipv6-rtradv:valid-lifetime": "string",
+                "vyatta-ipv6-rtradv:autonomous-flag": "boolean"
+              }
+            ],
+            "vyatta-ipv6-rtradv:default-lifetime": "integer",
+            "vyatta-ipv6-rtradv:link-mtu": "integer",
+            "vyatta-ipv6-rtradv:send-advert": "boolean",
+            "vyatta-ipv6-rtradv:retrans-timer": "integer",
+            "vyatta-ipv6-rtradv:cur-hop-limit": "integer",
+            "vyatta-ipv6-rtradv:other-config-flag": "boolean",
+            "vyatta-ipv6-rtradv:reachable-time": "integer",
+            "vyatta-ipv6-rtradv:managed-flag": "boolean",
+            "vyatta-ipv6-rtradv:max-interval": "integer"
+          }
+        },
+        "vyatta-interfaces-dataplane:vif": [
+          {
+            "vyatta-interfaces-dataplane:mtu": "integer",
+            "vyatta-interfaces-dataplane:disable": "object",
+            "vyatta-security-firewall:firewall": {
+              "vyatta-security-firewall:in": [
+                "string"
+              ],
+              "vyatta-security-firewall:out": [
+                "string"
+              ]
+            },
+            "vyatta-interfaces-dataplane:vlan": "integer",
+            "vyatta-policy-pbr:policy": {
+              "vyatta-policy-pbr:route": [
+                "string"
+              ]
+            },
+            "vyatta-interfaces-dataplane:disable-link-detect": "object",
+            "vyatta-interfaces-dataplane:tagnode": "integer",
+            "vyatta-interfaces-dataplane:ip": {
+              "vyatta-protocols-igmp:igmp": {
+                "vyatta-protocols-igmp:limit": "integer",
+                "vyatta-protocols-igmp:startup-query-count": "integer",
+                "vyatta-protocols-igmp:querier": {
+                  "vyatta-protocols-igmp:querier-timeout": "integer",
+                  "vyatta-protocols-igmp:forced": "object"
+                },
+                "vyatta-protocols-igmp:join-group": [
+                  {
+                    "vyatta-protocols-igmp:source": "string",
+                    "vyatta-protocols-igmp:tagnode": "string"
+                  }
+                ],
+                "vyatta-protocols-igmp:version": "integer",
+                "vyatta-protocols-igmp:query-interval": "integer",
+                "vyatta-protocols-igmp:access-group": "integer",
+                "vyatta-protocols-igmp:last-member-query-count": "integer",
+                "vyatta-protocols-igmp:offlink": "object",
+                "vyatta-protocols-igmp:limit-exception": "integer",
+                "vyatta-protocols-igmp:query-max-response-time": "integer",
+                "vyatta-protocols-igmp:startup-query-interval": "integer",
+                "vyatta-protocols-igmp:static-group": [
+                  {
+                    "vyatta-protocols-mld:tagnode": "string",
+                    "vyatta-protocols-mld:source": [
+                      "string"
+                    ]
+                  }
+                ],
+                "vyatta-protocols-igmp:immediate-leave": {
+                  "vyatta-protocols-mld:group-list": "string"
+                },
+                "vyatta-protocols-igmp:robustness-variable": "integer",
+                "vyatta-protocols-igmp:enforce-router-alert": "object",
+                "vyatta-protocols-igmp:last-member-query-interval": "integer"
+              },
+              "vyatta-protocols-ospf:ospf": {
+                "vyatta-protocols-ospf:mtu-ignore": "object",
+                "vyatta-protocols-ospf:authentication": {
+                  "vyatta-vrrp:password": "string"
+                },
+                "vyatta-protocols-ospf:priority": "integer",
+                "vyatta-protocols-ospf:hello-interval": "integer",
+                "vyatta-protocols-ospf:dead-interval": "integer",
+                "vyatta-protocols-ospf:retransmit-interval": "integer",
+                "vyatta-protocols-ospf:transmit-delay": "integer",
+                "vyatta-protocols-ospf:cost": "integer"
+              },
+              "vyatta-protocols-rip:rip": {
+                "vyatta-protocols-rip:send": {},
+                "vyatta-protocols-rip:authentication": {
+                  "vyatta-vrrp:password": "string"
+                },
+                "vyatta-protocols-rip:receive": {},
+                "vyatta-protocols-rip:split-horizon": {
+                  "vyatta-protocols-ripng:poison-reverse": "object",
+                  "vyatta-protocols-ripng:disable": "object"
+                }
+              },
+              "vyatta-interfaces-dataplane-unnumbered:unnumbered": {
+                "vyatta-interfaces-dataplane-unnumbered:donor-interface": [
+                  {
+                    "vyatta-interfaces-dataplane-unnumbered:tagnode": "string or null",
+                    "vyatta-interfaces-dataplane-unnumbered:preferred-address": "string"
+                  }
+                ]
+              },
+              "vyatta-protocols-pim:pim": {
+                "vyatta-protocols-pim6:hello-interval": "integer",
+                "vyatta-protocols-pim6:neighbor-filter": "string",
+                "vyatta-protocols-pim6:state-refresh": {
+                  "vyatta-protocols-pim6:origination-interval": "integer"
+                },
+                "vyatta-protocols-pim6:unicast-bsm": "object",
+                "vyatta-protocols-pim6:exclude-genid": "object",
+                "vyatta-protocols-pim6:hello-holdtime": "integer",
+                "vyatta-protocols-pim6:bsr-border": "object",
+                "vyatta-protocols-pim6:dr-priority": "integer"
+              },
+              "vyatta-multicast:multicast": {
+                "vyatta-multicast:ttl-threshold": "integer"
+              },
+              "vyatta-interfaces-dataplane:enable-proxy-arp": "object"
+            },
+            "vyatta-vrrp:vrrp": {
+              "vyatta-vrrp:vrrp-group": [
+                {
+                  "vyatta-vrrp:advertise-interval": "integer",
+                  "vyatta-vrrp:preempt-delay": "integer",
+                  "vyatta-vrrp:hello-source-address": "string or string",
+                  "vyatta-vrrp:authentication": {
+                    "vyatta-vrrp:password": "string"
+                  },
+                  "vyatta-vrrp:run-transition-scripts": {
+                    "vyatta-vrrp:fault": "string",
+                    "vyatta-vrrp:backup": "string",
+                    "vyatta-vrrp:master": "string"
+                  },
+                  "vyatta-vrrp:preempt": "boolean",
+                  "vyatta-vrrp:virtual-address": [
+                    "string"
+                  ],
+                  "vyatta-vrrp:rfc3768-compatibility": "object",
+                  "vyatta-vrrp:disable": "object",
+                  "vyatta-vrrp:sync-group": "string",
+                  "vyatta-vrrp:description": "string",
+                  "vyatta-vrrp:priority": "integer",
+                  "vyatta-vrrp:tagnode": "integer",
+                  "vyatta-vrrp:notify": {
+                    "vyatta-vrrp:bgp": "object",
+                    "vyatta-vrrp:ipsec": "object"
+                  }
+                }
+              ]
+            },
+            "vyatta-interfaces-dataplane:dhcpv6-options": {
+              "vyatta-interfaces-dataplane:temporary": "object",
+              "vyatta-interfaces-dataplane:parameters-only": "object"
+            },
+            "vyatta-interfaces-dataplane:bridge-group": {
+              "vyatta-interfaces-dataplane:bridge": "string",
+              "vyatta-interfaces-dataplane:cost": "integer",
+              "vyatta-interfaces-dataplane:bpdu-guard": "object",
+              "vyatta-interfaces-dataplane:priority": "integer",
+              "vyatta-interfaces-dataplane:root-block": "object"
+            },
+            "vyatta-interfaces-dataplane:ipv6": {
+              "vyatta-protocols-ospfv3:ospfv3": {
+                "vyatta-protocols-ospfv3:transmit-delay": "integer",
+                "vyatta-protocols-ospfv3:cost": "integer",
+                "vyatta-protocols-ospfv3:process": [
+                  {
+                    "vyatta-protocols-ospfv3:instance-id": [
+                      {
+                        "vyatta-protocols-ospfv3:tagnode": "integer",
+                        "vyatta-protocols-ospfv3:transmit-delay": "integer",
+                        "vyatta-protocols-ospfv3:cost": "integer",
+                        "vyatta-protocols-ospfv3:network": [
+                          {}
+                        ],
+                        "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+                        "vyatta-protocols-ospfv3:priority": "integer",
+                        "vyatta-protocols-ospfv3:hello-interval": "integer",
+                        "vyatta-protocols-ospfv3:dead-interval": "integer",
+                        "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+                        "vyatta-protocols-ospfv3:area": "string or integer",
+                        "vyatta-protocols-ospfv3:neighbor": [
+                          {
+                            "vyatta-protocols-ospfv3:tagnode": "string"
+                          }
+                        ]
+                      }
+                    ],
+                    "vyatta-protocols-ospfv3:tagnode": "string"
+                  }
+                ],
+                "vyatta-protocols-ospfv3:network": [
+                  {}
+                ],
+                "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+                "vyatta-protocols-ospfv3:priority": "integer",
+                "vyatta-protocols-ospfv3:hello-interval": "integer",
+                "vyatta-protocols-ospfv3:mtu-ignore": "object",
+                "vyatta-protocols-ospfv3:dead-interval": "integer",
+                "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+                "vyatta-protocols-ospfv3:area": "string or integer",
+                "vyatta-protocols-ospfv3:neighbor": [
+                  {
+                    "vyatta-protocols-ospfv3:tagnode": "string"
+                  }
+                ]
+              },
+              "vyatta-protocols-pim6:pim": {
+                "vyatta-protocols-pim6:hello-interval": "integer",
+                "vyatta-protocols-pim6:neighbor-filter": "string",
+                "vyatta-protocols-pim6:state-refresh": {
+                  "vyatta-protocols-pim6:origination-interval": "integer"
+                },
+                "vyatta-protocols-pim6:unicast-bsm": "object",
+                "vyatta-protocols-pim6:exclude-genid": "object",
+                "vyatta-protocols-pim6:hello-holdtime": "integer",
+                "vyatta-protocols-pim6:bsr-border": "object",
+                "vyatta-protocols-pim6:dr-priority": "integer"
+              },
+              "vyatta-ipv6-rtradv:dup-addr-detect-transmits": "integer",
+              "vyatta-ipv6-rtradv:disable-forwarding": "object",
+              "vyatta-protocols-mld:mld": {
+                "vyatta-protocols-mld:query-interval": "integer",
+                "vyatta-protocols-mld:robustness-variable": "integer",
+                "vyatta-protocols-mld:version": "integer",
+                "vyatta-protocols-mld:static-group": [
+                  {
+                    "vyatta-protocols-mld:tagnode": "string",
+                    "vyatta-protocols-mld:source": [
+                      "string"
+                    ]
+                  }
+                ],
+                "vyatta-protocols-mld:immediate-leave": {
+                  "vyatta-protocols-mld:group-list": "string"
+                },
+                "vyatta-protocols-mld:limit": "integer",
+                "vyatta-protocols-mld:query-max-response-time": "integer",
+                "vyatta-protocols-mld:limit-exception": "string",
+                "vyatta-protocols-mld:access-group": "string",
+                "vyatta-protocols-mld:querier-timeout": "integer",
+                "vyatta-protocols-mld:last-member-query-interval": "integer",
+                "vyatta-protocols-mld:last-member-query-count": "integer"
+              },
+              "vyatta-ipv6-rtradv:address": {
+                "vyatta-ipv6-rtradv:autoconf": "object",
+                "vyatta-ipv6-rtradv:eui64": [
+                  "string"
+                ]
+              },
+              "vyatta-protocols-ripng:ripng": {
+                "vyatta-protocols-ripng:metric-offset": "integer",
+                "vyatta-protocols-ripng:split-horizon": {
+                  "vyatta-protocols-ripng:poison-reverse": "object",
+                  "vyatta-protocols-ripng:disable": "object"
+                },
+                "vyatta-protocols-ripng:enable": "object",
+                "vyatta-protocols-ripng:neighbor": "string"
+              },
+              "vyatta-ipv6-rtradv:router-advert": {
+                "vyatta-ipv6-rtradv:min-interval": "integer",
+                "vyatta-ipv6-rtradv:prefix": [
+                  {
+                    "vyatta-ipv6-rtradv:tagnode": "string",
+                    "vyatta-ipv6-rtradv:on-link-flag": "boolean",
+                    "vyatta-ipv6-rtradv:preferred-lifetime": "string",
+                    "vyatta-ipv6-rtradv:valid-lifetime": "string",
+                    "vyatta-ipv6-rtradv:autonomous-flag": "boolean"
+                  }
+                ],
+                "vyatta-ipv6-rtradv:default-lifetime": "integer",
+                "vyatta-ipv6-rtradv:link-mtu": "integer",
+                "vyatta-ipv6-rtradv:send-advert": "boolean",
+                "vyatta-ipv6-rtradv:retrans-timer": "integer",
+                "vyatta-ipv6-rtradv:cur-hop-limit": "integer",
+                "vyatta-ipv6-rtradv:other-config-flag": "boolean",
+                "vyatta-ipv6-rtradv:reachable-time": "integer",
+                "vyatta-ipv6-rtradv:managed-flag": "boolean",
+                "vyatta-ipv6-rtradv:max-interval": "integer"
+              }
+            },
+            "vyatta-interfaces-l2tpeth:xconnect": {
+              "vyatta-interfaces-l2tpeth:ttl": "integer",
+              "vyatta-interfaces-l2tpeth:l2tpeth": "string"
+            },
+            "vyatta-interfaces-dataplane:address": [
+              "enum or null"
+            ],
+            "vyatta-interfaces-dataplane:description": "string"
+          }
+        ],
+        "vyatta-policy-qos:qos-policy": "string",
+        "vyatta-interfaces-l2tpeth:xconnect": {
+          "vyatta-interfaces-l2tpeth:ttl": "integer",
+          "vyatta-interfaces-l2tpeth:l2tpeth": "string"
+        },
+        "vyatta-interfaces-dataplane:address": [
+          "enum or null"
+        ],
+        "vyatta-interfaces-dataplane:description": "string"
+      }
+    ],
+    "vyatta-interfaces-loopback:loopback": [
+      {
+        "vyatta-interfaces-loopback:address": [
+          "string or string"
+        ],
+        "vyatta-interfaces-loopback:description": "string",
+        "vyatta-interfaces-loopback:tagnode": "string",
+        "vyatta-interfaces-loopback:ipv6": {
+          "vyatta-protocols-ospfv3:ospfv3": {
+            "vyatta-protocols-ospfv3:transmit-delay": "integer",
+            "vyatta-protocols-ospfv3:cost": "integer",
+            "vyatta-protocols-ospfv3:process": [
+              {
+                "vyatta-protocols-ospfv3:instance-id": [
+                  {
+                    "vyatta-protocols-ospfv3:tagnode": "integer",
+                    "vyatta-protocols-ospfv3:transmit-delay": "integer",
+                    "vyatta-protocols-ospfv3:cost": "integer",
+                    "vyatta-protocols-ospfv3:network": [
+                      {}
+                    ],
+                    "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+                    "vyatta-protocols-ospfv3:priority": "integer",
+                    "vyatta-protocols-ospfv3:hello-interval": "integer",
+                    "vyatta-protocols-ospfv3:dead-interval": "integer",
+                    "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+                    "vyatta-protocols-ospfv3:area": "string or integer",
+                    "vyatta-protocols-ospfv3:neighbor": [
+                      {
+                        "vyatta-protocols-ospfv3:tagnode": "string"
+                      }
+                    ]
+                  }
+                ],
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-ospfv3:network": [
+              {}
+            ],
+            "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+            "vyatta-protocols-ospfv3:priority": "integer",
+            "vyatta-protocols-ospfv3:hello-interval": "integer",
+            "vyatta-protocols-ospfv3:mtu-ignore": "object",
+            "vyatta-protocols-ospfv3:dead-interval": "integer",
+            "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+            "vyatta-protocols-ospfv3:area": "string or integer",
+            "vyatta-protocols-ospfv3:neighbor": [
+              {
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim6:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-ipv6-rtradv:dup-addr-detect-transmits": "integer",
+          "vyatta-ipv6-rtradv:disable-forwarding": "object",
+          "vyatta-protocols-mld:mld": {
+            "vyatta-protocols-mld:query-interval": "integer",
+            "vyatta-protocols-mld:robustness-variable": "integer",
+            "vyatta-protocols-mld:version": "integer",
+            "vyatta-protocols-mld:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-mld:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-mld:limit": "integer",
+            "vyatta-protocols-mld:query-max-response-time": "integer",
+            "vyatta-protocols-mld:limit-exception": "string",
+            "vyatta-protocols-mld:access-group": "string",
+            "vyatta-protocols-mld:querier-timeout": "integer",
+            "vyatta-protocols-mld:last-member-query-interval": "integer",
+            "vyatta-protocols-mld:last-member-query-count": "integer"
+          },
+          "vyatta-ipv6-rtradv:address": {
+            "vyatta-ipv6-rtradv:autoconf": "object",
+            "vyatta-ipv6-rtradv:eui64": [
+              "string"
+            ]
+          },
+          "vyatta-protocols-ripng:ripng": {
+            "vyatta-protocols-ripng:metric-offset": "integer",
+            "vyatta-protocols-ripng:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            },
+            "vyatta-protocols-ripng:enable": "object",
+            "vyatta-protocols-ripng:neighbor": "string"
+          },
+          "vyatta-ipv6-rtradv:router-advert": {
+            "vyatta-ipv6-rtradv:min-interval": "integer",
+            "vyatta-ipv6-rtradv:prefix": [
+              {
+                "vyatta-ipv6-rtradv:tagnode": "string",
+                "vyatta-ipv6-rtradv:on-link-flag": "boolean",
+                "vyatta-ipv6-rtradv:preferred-lifetime": "string",
+                "vyatta-ipv6-rtradv:valid-lifetime": "string",
+                "vyatta-ipv6-rtradv:autonomous-flag": "boolean"
+              }
+            ],
+            "vyatta-ipv6-rtradv:default-lifetime": "integer",
+            "vyatta-ipv6-rtradv:link-mtu": "integer",
+            "vyatta-ipv6-rtradv:send-advert": "boolean",
+            "vyatta-ipv6-rtradv:retrans-timer": "integer",
+            "vyatta-ipv6-rtradv:cur-hop-limit": "integer",
+            "vyatta-ipv6-rtradv:other-config-flag": "boolean",
+            "vyatta-ipv6-rtradv:reachable-time": "integer",
+            "vyatta-ipv6-rtradv:managed-flag": "boolean",
+            "vyatta-ipv6-rtradv:max-interval": "integer"
+          }
+        },
+        "vyatta-interfaces-loopback:ip": {
+          "vyatta-protocols-igmp:igmp": {
+            "vyatta-protocols-igmp:limit": "integer",
+            "vyatta-protocols-igmp:startup-query-count": "integer",
+            "vyatta-protocols-igmp:querier": {
+              "vyatta-protocols-igmp:querier-timeout": "integer",
+              "vyatta-protocols-igmp:forced": "object"
+            },
+            "vyatta-protocols-igmp:join-group": [
+              {
+                "vyatta-protocols-igmp:source": "string",
+                "vyatta-protocols-igmp:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-igmp:version": "integer",
+            "vyatta-protocols-igmp:query-interval": "integer",
+            "vyatta-protocols-igmp:access-group": "integer",
+            "vyatta-protocols-igmp:last-member-query-count": "integer",
+            "vyatta-protocols-igmp:offlink": "object",
+            "vyatta-protocols-igmp:limit-exception": "integer",
+            "vyatta-protocols-igmp:query-max-response-time": "integer",
+            "vyatta-protocols-igmp:startup-query-interval": "integer",
+            "vyatta-protocols-igmp:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-igmp:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-igmp:robustness-variable": "integer",
+            "vyatta-protocols-igmp:enforce-router-alert": "object",
+            "vyatta-protocols-igmp:last-member-query-interval": "integer"
+          },
+          "vyatta-protocols-ospf:ospf": {
+            "vyatta-protocols-ospf:mtu-ignore": "object",
+            "vyatta-protocols-ospf:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-ospf:priority": "integer",
+            "vyatta-protocols-ospf:hello-interval": "integer",
+            "vyatta-protocols-ospf:dead-interval": "integer",
+            "vyatta-protocols-ospf:retransmit-interval": "integer",
+            "vyatta-protocols-ospf:transmit-delay": "integer",
+            "vyatta-protocols-ospf:cost": "integer"
+          },
+          "vyatta-protocols-rip:rip": {
+            "vyatta-protocols-rip:send": {},
+            "vyatta-protocols-rip:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-rip:receive": {},
+            "vyatta-protocols-rip:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            }
+          },
+          "vyatta-interfaces-dataplane-unnumbered:unnumbered": {
+            "vyatta-interfaces-dataplane-unnumbered:donor-interface": [
+              {
+                "vyatta-interfaces-dataplane-unnumbered:tagnode": "string or null",
+                "vyatta-interfaces-dataplane-unnumbered:preferred-address": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-multicast:multicast": {
+            "vyatta-multicast:ttl-threshold": "integer"
+          },
+          "vyatta-interfaces-dataplane:enable-proxy-arp": "object"
+        }
+      }
+    ],
+    "vyatta-interfaces-l2tpeth:l2tpeth": [
+      {
+        "vyatta-interfaces-l2tpeth:description": "string",
+        "vyatta-interfaces-l2tpeth:bridge-group": {
+          "vyatta-interfaces-dataplane:bridge": "string",
+          "vyatta-interfaces-dataplane:cost": "integer",
+          "vyatta-interfaces-dataplane:bpdu-guard": "object",
+          "vyatta-interfaces-dataplane:priority": "integer",
+          "vyatta-interfaces-dataplane:root-block": "object"
+        },
+        "vyatta-security-firewall:firewall": {
+          "vyatta-security-firewall:in": [
+            "string"
+          ],
+          "vyatta-security-firewall:out": [
+            "string"
+          ]
+        },
+        "vyatta-interfaces-l2tpeth:l2tp-session": {
+          "vyatta-interfaces-l2tpeth:remote-cookie": "string",
+          "vyatta-interfaces-l2tpeth:local-cookie": "string",
+          "vyatta-interfaces-l2tpeth:local-udp-port": "integer",
+          "vyatta-interfaces-l2tpeth:encapsulation": "string",
+          "vyatta-interfaces-l2tpeth:remote-session-id": "integer",
+          "vyatta-interfaces-l2tpeth:local-ip": "string or string",
+          "vyatta-interfaces-l2tpeth:remote-ip": "string or string",
+          "vyatta-interfaces-l2tpeth:local-session-id": "integer",
+          "vyatta-interfaces-l2tpeth:remote-udp-port": "integer"
+        },
+        "vyatta-interfaces-l2tpeth:ip": {
+          "vyatta-protocols-igmp:igmp": {
+            "vyatta-protocols-igmp:limit": "integer",
+            "vyatta-protocols-igmp:startup-query-count": "integer",
+            "vyatta-protocols-igmp:querier": {
+              "vyatta-protocols-igmp:querier-timeout": "integer",
+              "vyatta-protocols-igmp:forced": "object"
+            },
+            "vyatta-protocols-igmp:join-group": [
+              {
+                "vyatta-protocols-igmp:source": "string",
+                "vyatta-protocols-igmp:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-igmp:version": "integer",
+            "vyatta-protocols-igmp:query-interval": "integer",
+            "vyatta-protocols-igmp:access-group": "integer",
+            "vyatta-protocols-igmp:last-member-query-count": "integer",
+            "vyatta-protocols-igmp:offlink": "object",
+            "vyatta-protocols-igmp:limit-exception": "integer",
+            "vyatta-protocols-igmp:query-max-response-time": "integer",
+            "vyatta-protocols-igmp:startup-query-interval": "integer",
+            "vyatta-protocols-igmp:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-igmp:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-igmp:robustness-variable": "integer",
+            "vyatta-protocols-igmp:enforce-router-alert": "object",
+            "vyatta-protocols-igmp:last-member-query-interval": "integer"
+          },
+          "vyatta-protocols-ospf:ospf": {
+            "vyatta-protocols-ospf:mtu-ignore": "object",
+            "vyatta-protocols-ospf:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-ospf:priority": "integer",
+            "vyatta-protocols-ospf:hello-interval": "integer",
+            "vyatta-protocols-ospf:dead-interval": "integer",
+            "vyatta-protocols-ospf:retransmit-interval": "integer",
+            "vyatta-protocols-ospf:transmit-delay": "integer",
+            "vyatta-protocols-ospf:cost": "integer"
+          },
+          "vyatta-protocols-rip:rip": {
+            "vyatta-protocols-rip:send": {},
+            "vyatta-protocols-rip:authentication": {
+              "vyatta-vrrp:password": "string"
+            },
+            "vyatta-protocols-rip:receive": {},
+            "vyatta-protocols-rip:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            }
+          },
+          "vyatta-interfaces-dataplane-unnumbered:unnumbered": {
+            "vyatta-interfaces-dataplane-unnumbered:donor-interface": [
+              {
+                "vyatta-interfaces-dataplane-unnumbered:tagnode": "string or null",
+                "vyatta-interfaces-dataplane-unnumbered:preferred-address": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-multicast:multicast": {
+            "vyatta-multicast:ttl-threshold": "integer"
+          },
+          "vyatta-interfaces-dataplane:enable-proxy-arp": "object"
+        },
+        "vyatta-interfaces-l2tpeth:address": [
+          "string or string"
+        ],
+        "vyatta-interfaces-l2tpeth:disable": "object",
+        "vyatta-interfaces-l2tpeth:ipv6": {
+          "vyatta-protocols-ospfv3:ospfv3": {
+            "vyatta-protocols-ospfv3:transmit-delay": "integer",
+            "vyatta-protocols-ospfv3:cost": "integer",
+            "vyatta-protocols-ospfv3:process": [
+              {
+                "vyatta-protocols-ospfv3:instance-id": [
+                  {
+                    "vyatta-protocols-ospfv3:tagnode": "integer",
+                    "vyatta-protocols-ospfv3:transmit-delay": "integer",
+                    "vyatta-protocols-ospfv3:cost": "integer",
+                    "vyatta-protocols-ospfv3:network": [
+                      {}
+                    ],
+                    "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+                    "vyatta-protocols-ospfv3:priority": "integer",
+                    "vyatta-protocols-ospfv3:hello-interval": "integer",
+                    "vyatta-protocols-ospfv3:dead-interval": "integer",
+                    "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+                    "vyatta-protocols-ospfv3:area": "string or integer",
+                    "vyatta-protocols-ospfv3:neighbor": [
+                      {
+                        "vyatta-protocols-ospfv3:tagnode": "string"
+                      }
+                    ]
+                  }
+                ],
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ],
+            "vyatta-protocols-ospfv3:network": [
+              {}
+            ],
+            "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+            "vyatta-protocols-ospfv3:priority": "integer",
+            "vyatta-protocols-ospfv3:hello-interval": "integer",
+            "vyatta-protocols-ospfv3:mtu-ignore": "object",
+            "vyatta-protocols-ospfv3:dead-interval": "integer",
+            "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+            "vyatta-protocols-ospfv3:area": "string or integer",
+            "vyatta-protocols-ospfv3:neighbor": [
+              {
+                "vyatta-protocols-ospfv3:tagnode": "string"
+              }
+            ]
+          },
+          "vyatta-protocols-pim6:pim": {
+            "vyatta-protocols-pim6:hello-interval": "integer",
+            "vyatta-protocols-pim6:neighbor-filter": "string",
+            "vyatta-protocols-pim6:state-refresh": {
+              "vyatta-protocols-pim6:origination-interval": "integer"
+            },
+            "vyatta-protocols-pim6:unicast-bsm": "object",
+            "vyatta-protocols-pim6:exclude-genid": "object",
+            "vyatta-protocols-pim6:hello-holdtime": "integer",
+            "vyatta-protocols-pim6:bsr-border": "object",
+            "vyatta-protocols-pim6:dr-priority": "integer"
+          },
+          "vyatta-ipv6-rtradv:dup-addr-detect-transmits": "integer",
+          "vyatta-ipv6-rtradv:disable-forwarding": "object",
+          "vyatta-protocols-mld:mld": {
+            "vyatta-protocols-mld:query-interval": "integer",
+            "vyatta-protocols-mld:robustness-variable": "integer",
+            "vyatta-protocols-mld:version": "integer",
+            "vyatta-protocols-mld:static-group": [
+              {
+                "vyatta-protocols-mld:tagnode": "string",
+                "vyatta-protocols-mld:source": [
+                  "string"
+                ]
+              }
+            ],
+            "vyatta-protocols-mld:immediate-leave": {
+              "vyatta-protocols-mld:group-list": "string"
+            },
+            "vyatta-protocols-mld:limit": "integer",
+            "vyatta-protocols-mld:query-max-response-time": "integer",
+            "vyatta-protocols-mld:limit-exception": "string",
+            "vyatta-protocols-mld:access-group": "string",
+            "vyatta-protocols-mld:querier-timeout": "integer",
+            "vyatta-protocols-mld:last-member-query-interval": "integer",
+            "vyatta-protocols-mld:last-member-query-count": "integer"
+          },
+          "vyatta-ipv6-rtradv:address": {
+            "vyatta-ipv6-rtradv:autoconf": "object",
+            "vyatta-ipv6-rtradv:eui64": [
+              "string"
+            ]
+          },
+          "vyatta-protocols-ripng:ripng": {
+            "vyatta-protocols-ripng:metric-offset": "integer",
+            "vyatta-protocols-ripng:split-horizon": {
+              "vyatta-protocols-ripng:poison-reverse": "object",
+              "vyatta-protocols-ripng:disable": "object"
+            },
+            "vyatta-protocols-ripng:enable": "object",
+            "vyatta-protocols-ripng:neighbor": "string"
+          },
+          "vyatta-ipv6-rtradv:router-advert": {
+            "vyatta-ipv6-rtradv:min-interval": "integer",
+            "vyatta-ipv6-rtradv:prefix": [
+              {
+                "vyatta-ipv6-rtradv:tagnode": "string",
+                "vyatta-ipv6-rtradv:on-link-flag": "boolean",
+                "vyatta-ipv6-rtradv:preferred-lifetime": "string",
+                "vyatta-ipv6-rtradv:valid-lifetime": "string",
+                "vyatta-ipv6-rtradv:autonomous-flag": "boolean"
+              }
+            ],
+            "vyatta-ipv6-rtradv:default-lifetime": "integer",
+            "vyatta-ipv6-rtradv:link-mtu": "integer",
+            "vyatta-ipv6-rtradv:send-advert": "boolean",
+            "vyatta-ipv6-rtradv:retrans-timer": "integer",
+            "vyatta-ipv6-rtradv:cur-hop-limit": "integer",
+            "vyatta-ipv6-rtradv:other-config-flag": "boolean",
+            "vyatta-ipv6-rtradv:reachable-time": "integer",
+            "vyatta-ipv6-rtradv:managed-flag": "boolean",
+            "vyatta-ipv6-rtradv:max-interval": "integer"
+          }
+        },
+        "vyatta-interfaces-l2tpeth:tagnode": "string",
+        "vyatta-policy-pbr:policy": {
+          "vyatta-policy-pbr:route": [
+            "string"
+          ]
+        },
+        "vyatta-interfaces-l2tpeth:mtu": "integer",
+        "vyatta-interfaces-l2tpeth:vif": [
+          {
+            "vyatta-interfaces-dataplane:mtu": "integer",
+            "vyatta-interfaces-dataplane:disable": "object",
+            "vyatta-security-firewall:firewall": {
+              "vyatta-security-firewall:in": [
+                "string"
+              ],
+              "vyatta-security-firewall:out": [
+                "string"
+              ]
+            },
+            "vyatta-interfaces-dataplane:vlan": "integer",
+            "vyatta-policy-pbr:policy": {
+              "vyatta-policy-pbr:route": [
+                "string"
+              ]
+            },
+            "vyatta-interfaces-dataplane:disable-link-detect": "object",
+            "vyatta-interfaces-dataplane:tagnode": "integer",
+            "vyatta-interfaces-dataplane:ip": {
+              "vyatta-protocols-igmp:igmp": {
+                "vyatta-protocols-igmp:limit": "integer",
+                "vyatta-protocols-igmp:startup-query-count": "integer",
+                "vyatta-protocols-igmp:querier": {
+                  "vyatta-protocols-igmp:querier-timeout": "integer",
+                  "vyatta-protocols-igmp:forced": "object"
+                },
+                "vyatta-protocols-igmp:join-group": [
+                  {
+                    "vyatta-protocols-igmp:source": "string",
+                    "vyatta-protocols-igmp:tagnode": "string"
+                  }
+                ],
+                "vyatta-protocols-igmp:version": "integer",
+                "vyatta-protocols-igmp:query-interval": "integer",
+                "vyatta-protocols-igmp:access-group": "integer",
+                "vyatta-protocols-igmp:last-member-query-count": "integer",
+                "vyatta-protocols-igmp:offlink": "object",
+                "vyatta-protocols-igmp:limit-exception": "integer",
+                "vyatta-protocols-igmp:query-max-response-time": "integer",
+                "vyatta-protocols-igmp:startup-query-interval": "integer",
+                "vyatta-protocols-igmp:static-group": [
+                  {
+                    "vyatta-protocols-mld:tagnode": "string",
+                    "vyatta-protocols-mld:source": [
+                      "string"
+                    ]
+                  }
+                ],
+                "vyatta-protocols-igmp:immediate-leave": {
+                  "vyatta-protocols-mld:group-list": "string"
+                },
+                "vyatta-protocols-igmp:robustness-variable": "integer",
+                "vyatta-protocols-igmp:enforce-router-alert": "object",
+                "vyatta-protocols-igmp:last-member-query-interval": "integer"
+              },
+              "vyatta-protocols-ospf:ospf": {
+                "vyatta-protocols-ospf:mtu-ignore": "object",
+                "vyatta-protocols-ospf:authentication": {
+                  "vyatta-vrrp:password": "string"
+                },
+                "vyatta-protocols-ospf:priority": "integer",
+                "vyatta-protocols-ospf:hello-interval": "integer",
+                "vyatta-protocols-ospf:dead-interval": "integer",
+                "vyatta-protocols-ospf:retransmit-interval": "integer",
+                "vyatta-protocols-ospf:transmit-delay": "integer",
+                "vyatta-protocols-ospf:cost": "integer"
+              },
+              "vyatta-protocols-rip:rip": {
+                "vyatta-protocols-rip:send": {},
+                "vyatta-protocols-rip:authentication": {
+                  "vyatta-vrrp:password": "string"
+                },
+                "vyatta-protocols-rip:receive": {},
+                "vyatta-protocols-rip:split-horizon": {
+                  "vyatta-protocols-ripng:poison-reverse": "object",
+                  "vyatta-protocols-ripng:disable": "object"
+                }
+              },
+              "vyatta-interfaces-dataplane-unnumbered:unnumbered": {
+                "vyatta-interfaces-dataplane-unnumbered:donor-interface": [
+                  {
+                    "vyatta-interfaces-dataplane-unnumbered:tagnode": "string or null",
+                    "vyatta-interfaces-dataplane-unnumbered:preferred-address": "string"
+                  }
+                ]
+              },
+              "vyatta-protocols-pim:pim": {
+                "vyatta-protocols-pim6:hello-interval": "integer",
+                "vyatta-protocols-pim6:neighbor-filter": "string",
+                "vyatta-protocols-pim6:state-refresh": {
+                  "vyatta-protocols-pim6:origination-interval": "integer"
+                },
+                "vyatta-protocols-pim6:unicast-bsm": "object",
+                "vyatta-protocols-pim6:exclude-genid": "object",
+                "vyatta-protocols-pim6:hello-holdtime": "integer",
+                "vyatta-protocols-pim6:bsr-border": "object",
+                "vyatta-protocols-pim6:dr-priority": "integer"
+              },
+              "vyatta-multicast:multicast": {
+                "vyatta-multicast:ttl-threshold": "integer"
+              },
+              "vyatta-interfaces-dataplane:enable-proxy-arp": "object"
+            },
+            "vyatta-vrrp:vrrp": {
+              "vyatta-vrrp:vrrp-group": [
+                {
+                  "vyatta-vrrp:advertise-interval": "integer",
+                  "vyatta-vrrp:preempt-delay": "integer",
+                  "vyatta-vrrp:hello-source-address": "string or string",
+                  "vyatta-vrrp:authentication": {
+                    "vyatta-vrrp:password": "string"
+                  },
+                  "vyatta-vrrp:run-transition-scripts": {
+                    "vyatta-vrrp:fault": "string",
+                    "vyatta-vrrp:backup": "string",
+                    "vyatta-vrrp:master": "string"
+                  },
+                  "vyatta-vrrp:preempt": "boolean",
+                  "vyatta-vrrp:virtual-address": [
+                    "string"
+                  ],
+                  "vyatta-vrrp:rfc3768-compatibility": "object",
+                  "vyatta-vrrp:disable": "object",
+                  "vyatta-vrrp:sync-group": "string",
+                  "vyatta-vrrp:description": "string",
+                  "vyatta-vrrp:priority": "integer",
+                  "vyatta-vrrp:tagnode": "integer",
+                  "vyatta-vrrp:notify": {
+                    "vyatta-vrrp:bgp": "object",
+                    "vyatta-vrrp:ipsec": "object"
+                  }
+                }
+              ]
+            },
+            "vyatta-interfaces-dataplane:dhcpv6-options": {
+              "vyatta-interfaces-dataplane:temporary": "object",
+              "vyatta-interfaces-dataplane:parameters-only": "object"
+            },
+            "vyatta-interfaces-dataplane:bridge-group": {
+              "vyatta-interfaces-dataplane:bridge": "string",
+              "vyatta-interfaces-dataplane:cost": "integer",
+              "vyatta-interfaces-dataplane:bpdu-guard": "object",
+              "vyatta-interfaces-dataplane:priority": "integer",
+              "vyatta-interfaces-dataplane:root-block": "object"
+            },
+            "vyatta-interfaces-dataplane:ipv6": {
+              "vyatta-protocols-ospfv3:ospfv3": {
+                "vyatta-protocols-ospfv3:transmit-delay": "integer",
+                "vyatta-protocols-ospfv3:cost": "integer",
+                "vyatta-protocols-ospfv3:process": [
+                  {
+                    "vyatta-protocols-ospfv3:instance-id": [
+                      {
+                        "vyatta-protocols-ospfv3:tagnode": "integer",
+                        "vyatta-protocols-ospfv3:transmit-delay": "integer",
+                        "vyatta-protocols-ospfv3:cost": "integer",
+                        "vyatta-protocols-ospfv3:network": [
+                          {}
+                        ],
+                        "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+                        "vyatta-protocols-ospfv3:priority": "integer",
+                        "vyatta-protocols-ospfv3:hello-interval": "integer",
+                        "vyatta-protocols-ospfv3:dead-interval": "integer",
+                        "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+                        "vyatta-protocols-ospfv3:area": "string or integer",
+                        "vyatta-protocols-ospfv3:neighbor": [
+                          {
+                            "vyatta-protocols-ospfv3:tagnode": "string"
+                          }
+                        ]
+                      }
+                    ],
+                    "vyatta-protocols-ospfv3:tagnode": "string"
+                  }
+                ],
+                "vyatta-protocols-ospfv3:network": [
+                  {}
+                ],
+                "vyatta-protocols-ospfv3:retransmit-interval": "integer",
+                "vyatta-protocols-ospfv3:priority": "integer",
+                "vyatta-protocols-ospfv3:hello-interval": "integer",
+                "vyatta-protocols-ospfv3:mtu-ignore": "object",
+                "vyatta-protocols-ospfv3:dead-interval": "integer",
+                "vyatta-protocols-ospfv3:link-lsa-suppression": "string",
+                "vyatta-protocols-ospfv3:area": "string or integer",
+                "vyatta-protocols-ospfv3:neighbor": [
+                  {
+                    "vyatta-protocols-ospfv3:tagnode": "string"
+                  }
+                ]
+              },
+              "vyatta-protocols-pim6:pim": {
+                "vyatta-protocols-pim6:hello-interval": "integer",
+                "vyatta-protocols-pim6:neighbor-filter": "string",
+                "vyatta-protocols-pim6:state-refresh": {
+                  "vyatta-protocols-pim6:origination-interval": "integer"
+                },
+                "vyatta-protocols-pim6:unicast-bsm": "object",
+                "vyatta-protocols-pim6:exclude-genid": "object",
+                "vyatta-protocols-pim6:hello-holdtime": "integer",
+                "vyatta-protocols-pim6:bsr-border": "object",
+                "vyatta-protocols-pim6:dr-priority": "integer"
+              },
+              "vyatta-ipv6-rtradv:dup-addr-detect-transmits": "integer",
+              "vyatta-ipv6-rtradv:disable-forwarding": "object",
+              "vyatta-protocols-mld:mld": {
+                "vyatta-protocols-mld:query-interval": "integer",
+                "vyatta-protocols-mld:robustness-variable": "integer",
+                "vyatta-protocols-mld:version": "integer",
+                "vyatta-protocols-mld:static-group": [
+                  {
+                    "vyatta-protocols-mld:tagnode": "string",
+                    "vyatta-protocols-mld:source": [
+                      "string"
+                    ]
+                  }
+                ],
+                "vyatta-protocols-mld:immediate-leave": {
+                  "vyatta-protocols-mld:group-list": "string"
+                },
+                "vyatta-protocols-mld:limit": "integer",
+                "vyatta-protocols-mld:query-max-response-time": "integer",
+                "vyatta-protocols-mld:limit-exception": "string",
+                "vyatta-protocols-mld:access-group": "string",
+                "vyatta-protocols-mld:querier-timeout": "integer",
+                "vyatta-protocols-mld:last-member-query-interval": "integer",
+                "vyatta-protocols-mld:last-member-query-count": "integer"
+              },
+              "vyatta-ipv6-rtradv:address": {
+                "vyatta-ipv6-rtradv:autoconf": "object",
+                "vyatta-ipv6-rtradv:eui64": [
+                  "string"
+                ]
+              },
+              "vyatta-protocols-ripng:ripng": {
+                "vyatta-protocols-ripng:metric-offset": "integer",
+                "vyatta-protocols-ripng:split-horizon": {
+                  "vyatta-protocols-ripng:poison-reverse": "object",
+                  "vyatta-protocols-ripng:disable": "object"
+                },
+                "vyatta-protocols-ripng:enable": "object",
+                "vyatta-protocols-ripng:neighbor": "string"
+              },
+              "vyatta-ipv6-rtradv:router-advert": {
+                "vyatta-ipv6-rtradv:min-interval": "integer",
+                "vyatta-ipv6-rtradv:prefix": [
+                  {
+                    "vyatta-ipv6-rtradv:tagnode": "string",
+                    "vyatta-ipv6-rtradv:on-link-flag": "boolean",
+                    "vyatta-ipv6-rtradv:preferred-lifetime": "string",
+                    "vyatta-ipv6-rtradv:valid-lifetime": "string",
+                    "vyatta-ipv6-rtradv:autonomous-flag": "boolean"
+                  }
+                ],
+                "vyatta-ipv6-rtradv:default-lifetime": "integer",
+                "vyatta-ipv6-rtradv:link-mtu": "integer",
+                "vyatta-ipv6-rtradv:send-advert": "boolean",
+                "vyatta-ipv6-rtradv:retrans-timer": "integer",
+                "vyatta-ipv6-rtradv:cur-hop-limit": "integer",
+                "vyatta-ipv6-rtradv:other-config-flag": "boolean",
+                "vyatta-ipv6-rtradv:reachable-time": "integer",
+                "vyatta-ipv6-rtradv:managed-flag": "boolean",
+                "vyatta-ipv6-rtradv:max-interval": "integer"
+              }
+            },
+            "vyatta-interfaces-l2tpeth:xconnect": {
+              "vyatta-interfaces-l2tpeth:ttl": "integer",
+              "vyatta-interfaces-l2tpeth:l2tpeth": "string"
+            },
+            "vyatta-interfaces-dataplane:address": [
+              "enum or null"
+            ],
+            "vyatta-interfaces-dataplane:description": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

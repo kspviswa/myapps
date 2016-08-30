@@ -1,0 +1,564 @@
+{
+  "policy": {
+    "vyatta-policy-qos:qos": [
+      {
+        "vyatta-policy-qos:shaper": {
+          "vyatta-policy-qos:class": [
+            {
+              "vyatta-policy-qos:match": [
+                {
+                  "vyatta-policy-qos:pcp": "integer",
+                  "vyatta-policy-qos:log": "object",
+                  "vyatta-policy-qos:protocol": "string",
+                  "vyatta-policy-qos:source": {
+                    "vyatta-policy-qos:port": "string",
+                    "vyatta-policy-qos:mac-address": "string",
+                    "vyatta-policy-qos:address": "string"
+                  },
+                  "vyatta-policy-qos:fragment": "object",
+                  "vyatta-policy-qos:police": {
+                    "vyatta-policy-qos:then": {
+                      "vyatta-policy-qos:mark": {
+                        "vyatta-policy-qos:pcp": "integer",
+                        "vyatta-policy-qos:dscp": "integer or enum"
+                      }
+                    },
+                    "vyatta-policy-qos:bandwidth": "string",
+                    "vyatta-policy-qos:burst": "integer"
+                  },
+                  "vyatta-policy-qos:tcp": {
+                    "vyatta-policy-qos:flags": "string"
+                  },
+                  "vyatta-policy-qos:description": "string",
+                  "vyatta-policy-qos:mark": {
+                    "vyatta-policy-qos:pcp": "integer",
+                    "vyatta-policy-qos:dscp": "integer or enum"
+                  },
+                  "vyatta-policy-qos:dscp": "integer or enum",
+                  "vyatta-policy-qos:tagnode": "string",
+                  "vyatta-policy-qos:destination": {
+                    "vyatta-policy-qos:port": "string",
+                    "vyatta-policy-qos:mac-address": "string",
+                    "vyatta-policy-qos:address": "string"
+                  }
+                }
+              ],
+              "vyatta-policy-qos:description": "string",
+              "vyatta-policy-qos:profile": "string",
+              "vyatta-policy-qos:tagnode": "integer"
+            }
+          ],
+          "vyatta-policy-qos:vlan": [
+            {
+              "vyatta-policy-qos:class": [
+                {
+                  "vyatta-policy-qos:match": [
+                    {
+                      "vyatta-policy-qos:pcp": "integer",
+                      "vyatta-policy-qos:log": "object",
+                      "vyatta-policy-qos:protocol": "string",
+                      "vyatta-policy-qos:source": {
+                        "vyatta-policy-qos:port": "string",
+                        "vyatta-policy-qos:mac-address": "string",
+                        "vyatta-policy-qos:address": "string"
+                      },
+                      "vyatta-policy-qos:fragment": "object",
+                      "vyatta-policy-qos:police": {
+                        "vyatta-policy-qos:then": {
+                          "vyatta-policy-qos:mark": {
+                            "vyatta-policy-qos:pcp": "integer",
+                            "vyatta-policy-qos:dscp": "integer or enum"
+                          }
+                        },
+                        "vyatta-policy-qos:bandwidth": "string",
+                        "vyatta-policy-qos:burst": "integer"
+                      },
+                      "vyatta-policy-qos:tcp": {
+                        "vyatta-policy-qos:flags": "string"
+                      },
+                      "vyatta-policy-qos:description": "string",
+                      "vyatta-policy-qos:mark": {
+                        "vyatta-policy-qos:pcp": "integer",
+                        "vyatta-policy-qos:dscp": "integer or enum"
+                      },
+                      "vyatta-policy-qos:dscp": "integer or enum",
+                      "vyatta-policy-qos:tagnode": "string",
+                      "vyatta-policy-qos:destination": {
+                        "vyatta-policy-qos:port": "string",
+                        "vyatta-policy-qos:mac-address": "string",
+                        "vyatta-policy-qos:address": "string"
+                      }
+                    }
+                  ],
+                  "vyatta-policy-qos:description": "string",
+                  "vyatta-policy-qos:profile": "string",
+                  "vyatta-policy-qos:tagnode": "integer"
+                }
+              ],
+              "vyatta-policy-qos:bandwidth": "string or string",
+              "vyatta-policy-qos:period": "integer",
+              "vyatta-policy-qos:description": "string",
+              "vyatta-policy-qos:burst": "integer",
+              "vyatta-policy-qos:default": "string",
+              "vyatta-policy-qos:traffic-class": [
+                {
+                  "vyatta-policy-qos:bandwidth": "string or string",
+                  "vyatta-policy-qos:description": "string",
+                  "vyatta-policy-qos:burst": "integer",
+                  "vyatta-policy-qos:random-detect": {
+                    "vyatta-policy-qos:min-threshold": "integer",
+                    "vyatta-policy-qos:max-threshold": "integer",
+                    "vyatta-policy-qos:mark-probability": "integer",
+                    "vyatta-policy-qos:filter-weight": "integer"
+                  },
+                  "vyatta-policy-qos:queue-limit": "integer",
+                  "vyatta-policy-qos:tagnode": "integer"
+                }
+              ],
+              "vyatta-policy-qos:tagnode": "integer"
+            }
+          ],
+          "vyatta-policy-qos:bandwidth": "string",
+          "vyatta-policy-qos:period": "integer",
+          "vyatta-policy-qos:description": "string",
+          "vyatta-policy-qos:burst": "integer",
+          "vyatta-policy-qos:default": "string",
+          "vyatta-policy-qos:profile": [
+            {
+              "vyatta-policy-qos:map": {
+                "vyatta-policy-qos:pcp": [
+                  {
+                    "vyatta-policy-qos:to": "integer",
+                    "vyatta-policy-qos:tagnode": "integer"
+                  }
+                ],
+                "vyatta-policy-qos:dscp": [
+                  {
+                    "vyatta-policy-qos:to": "integer",
+                    "vyatta-policy-qos:tagnode": "string"
+                  }
+                ]
+              },
+              "vyatta-policy-qos:bandwidth": "string",
+              "vyatta-policy-qos:period": "integer",
+              "vyatta-policy-qos:description": "string",
+              "vyatta-policy-qos:burst": "integer",
+              "vyatta-policy-qos:traffic-class": [
+                {
+                  "vyatta-policy-qos:bandwidth": "string or string",
+                  "vyatta-policy-qos:description": "string",
+                  "vyatta-policy-qos:burst": "integer",
+                  "vyatta-policy-qos:random-detect": {
+                    "vyatta-policy-qos:min-threshold": "integer",
+                    "vyatta-policy-qos:max-threshold": "integer",
+                    "vyatta-policy-qos:mark-probability": "integer",
+                    "vyatta-policy-qos:filter-weight": "integer"
+                  },
+                  "vyatta-policy-qos:queue-limit": "integer",
+                  "vyatta-policy-qos:tagnode": "integer"
+                }
+              ],
+              "vyatta-policy-qos:tagnode": "string",
+              "vyatta-policy-qos:queue": [
+                {
+                  "vyatta-policy-qos:weight": "integer",
+                  "vyatta-policy-qos:description": "string",
+                  "vyatta-policy-qos:traffic-class": "integer",
+                  "vyatta-policy-qos:tagnode": "integer"
+                }
+              ]
+            }
+          ],
+          "vyatta-policy-qos:frame-overhead": "integer",
+          "vyatta-policy-qos:traffic-class": [
+            {
+              "vyatta-policy-qos:bandwidth": "string or string",
+              "vyatta-policy-qos:description": "string",
+              "vyatta-policy-qos:burst": "integer",
+              "vyatta-policy-qos:random-detect": {
+                "vyatta-policy-qos:min-threshold": "integer",
+                "vyatta-policy-qos:max-threshold": "integer",
+                "vyatta-policy-qos:mark-probability": "integer",
+                "vyatta-policy-qos:filter-weight": "integer"
+              },
+              "vyatta-policy-qos:queue-limit": "integer",
+              "vyatta-policy-qos:tagnode": "integer"
+            }
+          ]
+        },
+        "vyatta-policy-qos:tagnode": "string"
+      }
+    ],
+    "vyatta-policy-route:route": {
+      "vyatta-policy-route:prefix-list": [
+        {
+          "vyatta-policy-route:description": "string",
+          "vyatta-policy-route:tagnode": "string",
+          "vyatta-policy-route:rule": [
+            {
+              "vyatta-policy-pbr:icmp": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:dscp": "integer",
+              "vyatta-policy-pbr:source": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:tagnode": "integer",
+              "vyatta-policy-pbr:tcp": {
+                "vyatta-policy-qos:flags": "string"
+              },
+              "vyatta-policy-pbr:address-family": "string",
+              "vyatta-policy-pbr:destination": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:table": "integer",
+              "vyatta-policy-pbr:disable": "object",
+              "vyatta-policy-pbr:log": "object",
+              "vyatta-policy-pbr:icmpv6": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:protocol": "string",
+              "vyatta-policy-pbr:description": "string"
+            }
+          ]
+        }
+      ],
+      "vyatta-policy-route:extcommunity-list": [
+        {
+          "vyatta-policy-route:description": "string",
+          "vyatta-policy-route:tagnode": "integer",
+          "vyatta-policy-route:rule": [
+            {
+              "vyatta-policy-pbr:icmp": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:dscp": "integer",
+              "vyatta-policy-pbr:source": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:tagnode": "integer",
+              "vyatta-policy-pbr:tcp": {
+                "vyatta-policy-qos:flags": "string"
+              },
+              "vyatta-policy-pbr:address-family": "string",
+              "vyatta-policy-pbr:destination": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:table": "integer",
+              "vyatta-policy-pbr:disable": "object",
+              "vyatta-policy-pbr:log": "object",
+              "vyatta-policy-pbr:icmpv6": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:protocol": "string",
+              "vyatta-policy-pbr:description": "string"
+            }
+          ]
+        }
+      ],
+      "vyatta-policy-route:access-list6": [
+        {
+          "vyatta-policy-route:description": "string",
+          "vyatta-policy-route:tagnode": "string",
+          "vyatta-policy-route:rule": [
+            {
+              "vyatta-policy-pbr:icmp": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:dscp": "integer",
+              "vyatta-policy-pbr:source": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:tagnode": "integer",
+              "vyatta-policy-pbr:tcp": {
+                "vyatta-policy-qos:flags": "string"
+              },
+              "vyatta-policy-pbr:address-family": "string",
+              "vyatta-policy-pbr:destination": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:table": "integer",
+              "vyatta-policy-pbr:disable": "object",
+              "vyatta-policy-pbr:log": "object",
+              "vyatta-policy-pbr:icmpv6": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:protocol": "string",
+              "vyatta-policy-pbr:description": "string"
+            }
+          ]
+        }
+      ],
+      "vyatta-policy-route:access-list": [
+        {
+          "vyatta-policy-route:description": "string",
+          "vyatta-policy-route:tagnode": "integer",
+          "vyatta-policy-route:rule": [
+            {
+              "vyatta-policy-pbr:icmp": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:dscp": "integer",
+              "vyatta-policy-pbr:source": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:tagnode": "integer",
+              "vyatta-policy-pbr:tcp": {
+                "vyatta-policy-qos:flags": "string"
+              },
+              "vyatta-policy-pbr:address-family": "string",
+              "vyatta-policy-pbr:destination": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:table": "integer",
+              "vyatta-policy-pbr:disable": "object",
+              "vyatta-policy-pbr:log": "object",
+              "vyatta-policy-pbr:icmpv6": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:protocol": "string",
+              "vyatta-policy-pbr:description": "string"
+            }
+          ]
+        }
+      ],
+      "vyatta-policy-route:prefix-list6": [
+        {
+          "vyatta-policy-route:description": "string",
+          "vyatta-policy-route:tagnode": "string",
+          "vyatta-policy-route:rule": [
+            {
+              "vyatta-policy-pbr:icmp": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:dscp": "integer",
+              "vyatta-policy-pbr:source": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:tagnode": "integer",
+              "vyatta-policy-pbr:tcp": {
+                "vyatta-policy-qos:flags": "string"
+              },
+              "vyatta-policy-pbr:address-family": "string",
+              "vyatta-policy-pbr:destination": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:table": "integer",
+              "vyatta-policy-pbr:disable": "object",
+              "vyatta-policy-pbr:log": "object",
+              "vyatta-policy-pbr:icmpv6": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:protocol": "string",
+              "vyatta-policy-pbr:description": "string"
+            }
+          ]
+        }
+      ],
+      "vyatta-policy-route:route-map": [
+        {
+          "vyatta-policy-route:description": "string",
+          "vyatta-policy-route:tagnode": "string",
+          "vyatta-policy-route:rule": [
+            {
+              "vyatta-policy-pbr:icmp": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:dscp": "integer",
+              "vyatta-policy-pbr:source": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:tagnode": "integer",
+              "vyatta-policy-pbr:tcp": {
+                "vyatta-policy-qos:flags": "string"
+              },
+              "vyatta-policy-pbr:address-family": "string",
+              "vyatta-policy-pbr:destination": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:table": "integer",
+              "vyatta-policy-pbr:disable": "object",
+              "vyatta-policy-pbr:log": "object",
+              "vyatta-policy-pbr:icmpv6": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:protocol": "string",
+              "vyatta-policy-pbr:description": "string"
+            }
+          ]
+        }
+      ],
+      "vyatta-policy-pbr:pbr": [
+        {
+          "vyatta-policy-pbr:rule": [
+            {
+              "vyatta-policy-pbr:icmp": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:dscp": "integer",
+              "vyatta-policy-pbr:source": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:tagnode": "integer",
+              "vyatta-policy-pbr:tcp": {
+                "vyatta-policy-qos:flags": "string"
+              },
+              "vyatta-policy-pbr:address-family": "string",
+              "vyatta-policy-pbr:destination": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:table": "integer",
+              "vyatta-policy-pbr:disable": "object",
+              "vyatta-policy-pbr:log": "object",
+              "vyatta-policy-pbr:icmpv6": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:protocol": "string",
+              "vyatta-policy-pbr:description": "string"
+            }
+          ],
+          "vyatta-policy-pbr:tagnode": "string",
+          "vyatta-policy-pbr:description": "string"
+        }
+      ],
+      "vyatta-policy-route:community-list": [
+        {
+          "vyatta-policy-route:description": "string",
+          "vyatta-policy-route:tagnode": "integer",
+          "vyatta-policy-route:rule": [
+            {
+              "vyatta-policy-pbr:icmp": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:dscp": "integer",
+              "vyatta-policy-pbr:source": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:tagnode": "integer",
+              "vyatta-policy-pbr:tcp": {
+                "vyatta-policy-qos:flags": "string"
+              },
+              "vyatta-policy-pbr:address-family": "string",
+              "vyatta-policy-pbr:destination": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:table": "integer",
+              "vyatta-policy-pbr:disable": "object",
+              "vyatta-policy-pbr:log": "object",
+              "vyatta-policy-pbr:icmpv6": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:protocol": "string",
+              "vyatta-policy-pbr:description": "string"
+            }
+          ]
+        }
+      ],
+      "vyatta-policy-route:as-path-list": [
+        {
+          "vyatta-policy-route:description": "string",
+          "vyatta-policy-route:tagnode": "string",
+          "vyatta-policy-route:rule": [
+            {
+              "vyatta-policy-pbr:icmp": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:dscp": "integer",
+              "vyatta-policy-pbr:source": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:tagnode": "integer",
+              "vyatta-policy-pbr:tcp": {
+                "vyatta-policy-qos:flags": "string"
+              },
+              "vyatta-policy-pbr:address-family": "string",
+              "vyatta-policy-pbr:destination": {
+                "vyatta-policy-qos:port": "string",
+                "vyatta-policy-qos:mac-address": "string",
+                "vyatta-policy-qos:address": "string"
+              },
+              "vyatta-policy-pbr:table": "integer",
+              "vyatta-policy-pbr:disable": "object",
+              "vyatta-policy-pbr:log": "object",
+              "vyatta-policy-pbr:icmpv6": {
+                "vyatta-policy-pbr:code": "integer",
+                "vyatta-policy-pbr:type": "integer",
+                "vyatta-policy-pbr:type-name": "string"
+              },
+              "vyatta-policy-pbr:protocol": "string",
+              "vyatta-policy-pbr:description": "string"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

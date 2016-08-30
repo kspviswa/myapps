@@ -55,14 +55,14 @@ public class AppComponent {
 
         for(Device d : devices)
         {
-            log.info("Device id" + d.id().toString());
+            log.info("#### [viswa] Device id " + d.id().toString());
 
 
                 List<PortStatistics> portStatisticsList = deviceService.getPortDeltaStatistics(d.id());
                 for (PortStatistics portStats : portStatisticsList) {
                     try {
                         int port = portStats.port();
-                        log.info("#### Creating object for " + port);
+                        //log.info("#### Creating object for " + port);
                         portStatsReaderTask task = new portStatsReaderTask();
                         //Timer timer = new Timer();
                         task.setDelay(3);
@@ -73,7 +73,7 @@ public class AppComponent {
                         task.setDeviceService(deviceService);
                         task.setDevice(d);
                         map.put(port, task);
-                        log.info("#### Creating object for " + port + " Before calling scheulde()");
+                        //log.info("#### Creating object for " + port + " Before calling scheulde()");
                         task.schedule();
                     } catch (Exception e) {
                         e.printStackTrace();

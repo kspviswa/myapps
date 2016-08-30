@@ -29,12 +29,13 @@ public class portStatsReaderTask {
         @Override
         public void run() {
             while (!isExit()) {
-                log.info("####### Into run() ");
+                //log.info("####### Into run() ");
                 List<PortStatistics> portStatisticsList = getDeviceService().getPortDeltaStatistics(getDevice().id());
                 for (PortStatistics portStats : portStatisticsList) {
-                    log.info("########## port is " + portStats.port());
+                  //  log.info("########## port is " + portStats.port());
                     if (portStats.port() == getPort()) {
-                        log.info("Port " + port + "has recieved " + portStats.bytesReceived() + "bytes");
+                        double rate = (portStats.bytesReceived() / (1024 * 1024));
+                        log.info("Port " + port + " Rate " + rate + " MB/s");
                         try {
                             Thread.sleep((getDelay() * 1000));
                             break;
