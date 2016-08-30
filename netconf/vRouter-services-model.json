@@ -1,0 +1,429 @@
+{
+  "service": {
+    "vyatta-service-sflow:sflow": {
+      "vyatta-service-sflow:sampling-rate": "integer",
+      "vyatta-service-sflow:server-port": [
+        {
+          "vyatta-service-sflow:server-address": [
+            "string or string"
+          ],
+          "vyatta-service-sflow:tagnode": "integer"
+        }
+      ],
+      "vyatta-service-sflow:agent-address": "string or string",
+      "vyatta-service-sflow:polling-interval": "integer"
+    },
+    "vyatta-service-ssh:ssh": {
+      "vyatta-service-ssh:port": [
+        "integer"
+      ],
+      "vyatta-service-ssh:disable-tcp-forwarding": "object",
+      "vyatta-service-ssh:timeout": "integer",
+      "vyatta-service-ssh:allow-root": "object",
+      "vyatta-service-ssh:disable-host-validation": "object",
+      "vyatta-service-ssh:disable-password-authentication": "object",
+      "vyatta-service-ssh:listen-address": [
+        "string or string"
+      ],
+      "vyatta-service-ssh:authentication-retries": "integer"
+    },
+    "vyatta-service-dhcp-relay:dhcp-relay": {
+      "vyatta-service-dhcp-relay:relay-options": {
+        "vyatta-service-dhcp-relay:port": "integer",
+        "vyatta-service-dhcp-relay:max-size": "integer",
+        "vyatta-service-dhcp-relay:hop-count": "integer"
+      },
+      "vyatta-service-dhcp-relay:server": [
+        "string"
+      ],
+      "vyatta-service-dhcp-relay:listen-interface": [
+        "string"
+      ],
+      "vyatta-service-dhcp-relay:upstream-interface": [
+        "string"
+      ]
+    },
+    "vyatta-service-dns:dns": {
+      "vyatta-service-dns:forwarding": {
+        "vyatta-service-dns:listen-on": [
+          "string"
+        ],
+        "vyatta-service-dns:cache-size": "integer",
+        "vyatta-service-dns:dhcp": [
+          "string"
+        ],
+        "vyatta-service-dns:name-server": [
+          "string"
+        ],
+        "vyatta-service-dns:system": "object",
+        "vyatta-service-dns:domain": [
+          {
+            "vyatta-service-dns:server": "string",
+            "vyatta-service-dns:tagnode": "string"
+          }
+        ]
+      },
+      "vyatta-service-dns:dynamic": {
+        "vyatta-service-dns:interface": [
+          {
+            "vyatta-service-lldp:disable": "object",
+            "vyatta-service-lldp:location": {
+              "vyatta-service-lldp:coordinate-based": {
+                "vyatta-service-lldp:altitude": "string",
+                "vyatta-service-lldp:longitude": "string",
+                "vyatta-service-lldp:latitude": "string"
+              },
+              "vyatta-service-lldp:civic-based": {
+                "vyatta-service-lldp:ca-type": [
+                  {
+                    "vyatta-service-lldp:ca-value": "string",
+                    "vyatta-service-lldp:tagnode": "integer"
+                  }
+                ],
+                "vyatta-service-lldp:country-code": "string"
+              },
+              "vyatta-service-lldp:elin": "string"
+            },
+            "vyatta-service-lldp:tagnode": "string"
+          }
+        ]
+      }
+    },
+    "vyatta-service-telnet:telnet": {
+      "vyatta-service-telnet:listen-address": "string or string",
+      "vyatta-service-telnet:allow-root": "object",
+      "vyatta-service-telnet:port": "integer"
+    },
+    "vyatta-service-dhcpv6-relay:dhcpv6-relay": {
+      "vyatta-service-dhcpv6-relay:upstream-interface": [
+        {
+          "vyatta-service-dhcpv6-relay:address": "string",
+          "vyatta-service-dhcpv6-relay:tagnode": "string"
+        }
+      ],
+      "vyatta-service-dhcpv6-relay:max-hop-count": "integer",
+      "vyatta-service-dhcpv6-relay:use-interface-id-option": "object",
+      "vyatta-service-dhcpv6-relay:listen-interface": [
+        {
+          "vyatta-service-dhcpv6-relay:address": "string",
+          "vyatta-service-dhcpv6-relay:tagnode": "string"
+        }
+      ],
+      "vyatta-service-dhcpv6-relay:listen-port": "integer"
+    },
+    "vyatta-service-https:https": {
+      "vyatta-service-https:service-users": "object",
+      "vyatta-service-https:listen-address": [
+        "string or string"
+      ]
+    },
+    "vyatta-service-connsync:connsync": {
+      "vyatta-service-connsync:remote-peer": "string",
+      "vyatta-service-connsync:interface": "string",
+      "vyatta-service-connsync:failover-mechanism": {
+        "vyatta-service-connsync:vrrp": {
+          "vyatta-service-connsync:sync-group": "string"
+        }
+      }
+    },
+    "vyatta-service-twamp:twamp": {
+      "vyatta-service-twamp:server": {
+        "vyatta-service-twamp:user": [
+          {
+            "vyatta-service-twamp:password": "string",
+            "vyatta-service-twamp:name": "string"
+          }
+        ],
+        "vyatta-service-twamp:client-list": [
+          "string or string"
+        ],
+        "vyatta-service-twamp:server-inactivity-timeout": "integer",
+        "vyatta-service-twamp:mode": [
+          null
+        ],
+        "vyatta-service-twamp:maximum-connections": "integer",
+        "vyatta-service-twamp:maximum-sessions-per-connection": "integer",
+        "vyatta-service-twamp:port": "integer",
+        "vyatta-service-twamp:test-inactivity-timeout": "integer",
+        "vyatta-service-twamp:dscp-value": "integer"
+      }
+    },
+    "vyatta-service-ssh:netconf": "object",
+    "vyatta-service-nat:nat": {
+      "vyatta-service-nat:source": {
+        "vyatta-service-nat:port": "string",
+        "vyatta-service-nat:address": "string"
+      },
+      "vyatta-service-nat:destination": {
+        "vyatta-service-nat:rule": [
+          {
+            "vyatta-service-nat:source": {
+              "vyatta-service-nat:port": "string",
+              "vyatta-service-nat:address": "string"
+            },
+            "vyatta-service-nat:protocol": "string",
+            "vyatta-service-nat:translation": {
+              "vyatta-service-nat:port": "string",
+              "vyatta-service-nat:address": "string"
+            },
+            "vyatta-service-nat:description": "string",
+            "vyatta-service-nat:inbound-interface": "string",
+            "vyatta-service-nat:exclude": "object",
+            "vyatta-service-nat:disable": "object",
+            "vyatta-service-nat:tagnode": "integer",
+            "vyatta-service-nat:destination": "object",
+            "vyatta-service-nat:log": "object"
+          }
+        ]
+      },
+      "vyatta-service-nat:ipv6-to-ipv4": {
+        "vyatta-service-nat:rule": [
+          {
+            "vyatta-service-nat:source": {
+              "vyatta-service-nat:port": "string",
+              "vyatta-service-nat:address": "string"
+            },
+            "vyatta-service-nat:protocol": "string",
+            "vyatta-service-nat:translation": {
+              "vyatta-service-nat:port": "string",
+              "vyatta-service-nat:address": "string"
+            },
+            "vyatta-service-nat:description": "string",
+            "vyatta-service-nat:inbound-interface": "string",
+            "vyatta-service-nat:exclude": "object",
+            "vyatta-service-nat:disable": "object",
+            "vyatta-service-nat:tagnode": "integer",
+            "vyatta-service-nat:destination": {
+              "vyatta-service-nat:rule": [
+                "(config)rule"
+              ]
+            },
+            "vyatta-service-nat:log": "object"
+          }
+        ]
+      }
+    },
+    "vyatta-service-dhcpv6-server:dhcpv6-server": {
+      "vyatta-service-dhcpv6-server:listento": {
+        "vyatta-service-dhcp-server:interface": [
+          "string"
+        ]
+      },
+      "vyatta-service-dhcpv6-server:shared-network-name": [
+        {
+          "vyatta-service-dhcp-server:authoritative": "string",
+          "vyatta-service-dhcp-server:subnet": [
+            {
+              "vyatta-service-dhcp-server:static-mapping": [
+                {
+                  "vyatta-service-dhcp-server:mac-address": "string",
+                  "vyatta-service-dhcp-server:disable": "object",
+                  "vyatta-service-dhcp-server:static-mapping-parameters": [
+                    "string"
+                  ],
+                  "vyatta-service-dhcp-server:tagnode": "string",
+                  "vyatta-service-dhcp-server:ip-address": "string"
+                }
+              ],
+              "vyatta-service-dhcp-server:ip-forwarding": {
+                "vyatta-service-dhcp-server:enable": "boolean"
+              },
+              "vyatta-service-dhcp-server:subnet-parameters": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:server-identifier": "string",
+              "vyatta-service-dhcp-server:start": [
+                {
+                  "vyatta-service-dhcp-server:tagnode": "string",
+                  "vyatta-service-dhcp-server:stop": "string"
+                }
+              ],
+              "vyatta-service-dhcp-server:static-route": {
+                "vyatta-service-dhcp-server:router": "string",
+                "vyatta-service-dhcp-server:destination-subnet": "string"
+              },
+              "vyatta-service-dhcp-server:tagnode": "string",
+              "vyatta-service-dhcp-server:time-offset": "string",
+              "vyatta-service-dhcp-server:smtp-server": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:bootfile-server": "string",
+              "vyatta-service-dhcp-server:domain-name": "string",
+              "vyatta-service-dhcp-server:time-server": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:wins-server": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:ntp-server": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:wpad-url": "string",
+              "vyatta-service-dhcp-server:tftp-server-name": "string",
+              "vyatta-service-dhcp-server:default-router": "string",
+              "vyatta-service-dhcp-server:dns-server": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:exclude": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:ping-check": "object",
+              "vyatta-service-dhcp-server:bootfile-name": "string",
+              "vyatta-service-dhcp-server:failover": {
+                "vyatta-service-dhcp-server:peer-address": "string",
+                "vyatta-service-dhcp-server:name": "string",
+                "vyatta-service-dhcp-server:local-address": "string",
+                "vyatta-service-dhcp-server:status": "string"
+              },
+              "vyatta-service-dhcp-server:pop-server": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:client-prefix-length": "integer",
+              "vyatta-service-dhcp-server:lease": "integer"
+            }
+          ],
+          "vyatta-service-dhcp-server:description": "string",
+          "vyatta-service-dhcp-server:disable": "object",
+          "vyatta-service-dhcp-server:tagnode": "string",
+          "vyatta-service-dhcp-server:shared-network-parameters": [
+            "string"
+          ]
+        }
+      ],
+      "vyatta-service-dhcpv6-server:preference": "integer"
+    },
+    "vyatta-service-snmp:snmp": {
+      "vyatta-service-lldp:enable": "object"
+    },
+    "vyatta-service-lldp:lldp": {
+      "vyatta-service-lldp:management-address": "string",
+      "vyatta-service-lldp:legacy-protocols": {
+        "vyatta-service-lldp:sonmp": "object",
+        "vyatta-service-lldp:edp": "object",
+        "vyatta-service-lldp:fdp": "object",
+        "vyatta-service-lldp:cdp": "object"
+      },
+      "vyatta-service-lldp:snmp": {
+        "vyatta-service-lldp:enable": "object"
+      },
+      "vyatta-service-lldp:interface": [
+        {
+          "vyatta-service-lldp:disable": "object",
+          "vyatta-service-lldp:location": {
+            "vyatta-service-lldp:coordinate-based": {
+              "vyatta-service-lldp:altitude": "string",
+              "vyatta-service-lldp:longitude": "string",
+              "vyatta-service-lldp:latitude": "string"
+            },
+            "vyatta-service-lldp:civic-based": {
+              "vyatta-service-lldp:ca-type": [
+                {
+                  "vyatta-service-lldp:ca-value": "string",
+                  "vyatta-service-lldp:tagnode": "integer"
+                }
+              ],
+              "vyatta-service-lldp:country-code": "string"
+            },
+            "vyatta-service-lldp:elin": "string"
+          },
+          "vyatta-service-lldp:tagnode": "string"
+        }
+      ]
+    },
+    "vyatta-service-dhcp-server:dhcp-server": {
+      "vyatta-service-dhcp-server:disabled": "boolean",
+      "vyatta-service-dhcp-server:global-parameters": [
+        "string"
+      ],
+      "vyatta-service-dhcp-server:shared-network-name": [
+        {
+          "vyatta-service-dhcp-server:authoritative": "string",
+          "vyatta-service-dhcp-server:subnet": [
+            {
+              "vyatta-service-dhcp-server:static-mapping": [
+                {
+                  "vyatta-service-dhcp-server:mac-address": "string",
+                  "vyatta-service-dhcp-server:disable": "object",
+                  "vyatta-service-dhcp-server:static-mapping-parameters": [
+                    "string"
+                  ],
+                  "vyatta-service-dhcp-server:tagnode": "string",
+                  "vyatta-service-dhcp-server:ip-address": "string"
+                }
+              ],
+              "vyatta-service-dhcp-server:ip-forwarding": {
+                "vyatta-service-dhcp-server:enable": "boolean"
+              },
+              "vyatta-service-dhcp-server:subnet-parameters": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:server-identifier": "string",
+              "vyatta-service-dhcp-server:start": [
+                {
+                  "vyatta-service-dhcp-server:tagnode": "string",
+                  "vyatta-service-dhcp-server:stop": "string"
+                }
+              ],
+              "vyatta-service-dhcp-server:static-route": {
+                "vyatta-service-dhcp-server:router": "string",
+                "vyatta-service-dhcp-server:destination-subnet": "string"
+              },
+              "vyatta-service-dhcp-server:tagnode": "string",
+              "vyatta-service-dhcp-server:time-offset": "string",
+              "vyatta-service-dhcp-server:smtp-server": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:bootfile-server": "string",
+              "vyatta-service-dhcp-server:domain-name": "string",
+              "vyatta-service-dhcp-server:time-server": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:wins-server": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:ntp-server": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:wpad-url": "string",
+              "vyatta-service-dhcp-server:tftp-server-name": "string",
+              "vyatta-service-dhcp-server:default-router": "string",
+              "vyatta-service-dhcp-server:dns-server": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:exclude": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:ping-check": "object",
+              "vyatta-service-dhcp-server:bootfile-name": "string",
+              "vyatta-service-dhcp-server:failover": {
+                "vyatta-service-dhcp-server:peer-address": "string",
+                "vyatta-service-dhcp-server:name": "string",
+                "vyatta-service-dhcp-server:local-address": "string",
+                "vyatta-service-dhcp-server:status": "string"
+              },
+              "vyatta-service-dhcp-server:pop-server": [
+                "string"
+              ],
+              "vyatta-service-dhcp-server:client-prefix-length": "integer",
+              "vyatta-service-dhcp-server:lease": "integer"
+            }
+          ],
+          "vyatta-service-dhcp-server:description": "string",
+          "vyatta-service-dhcp-server:disable": "object",
+          "vyatta-service-dhcp-server:tagnode": "string",
+          "vyatta-service-dhcp-server:shared-network-parameters": [
+            "string"
+          ]
+        }
+      ],
+      "vyatta-service-dhcp-server:dynamic-dns-update": {
+        "vyatta-service-dhcp-server:enable": "boolean"
+      },
+      "vyatta-service-dhcp-server:listento": {
+        "vyatta-service-dhcp-server:interface": [
+          "string"
+        ]
+      }
+    }
+  }
+}
