@@ -1,7 +1,13 @@
 Manifest-Version: 1.0
+<<<<<<< Updated upstream
 Bnd-LastModified: 1471350742178
 Build-Jdk: 1.8.0_91
 Built-By: kspviswa
+=======
+Bnd-LastModified: 1471703031802
+Build-Jdk: 1.8.0_101
+Built-By: kspviswa-onos
+>>>>>>> Stashed changes
 Bundle-Description: ONOS OSGi bundle archetype
 Bundle-ManifestVersion: 2
 Bundle-Name: sample

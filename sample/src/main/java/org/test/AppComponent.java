@@ -22,6 +22,7 @@ import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.ReferenceCardinality;
 import org.apache.felix.scr.annotations.Service;
 import org.onosproject.net.Device;
+import org.onosproject.net.Port;
 import org.onosproject.net.device.DeviceService;
 import org.onosproject.net.device.PortStatistics;
 import org.slf4j.Logger;
@@ -57,7 +58,23 @@ public class AppComponent {
         {
             log.info("#### [viswa] Device id " + d.id().toString());
 
+            List<Port> ports = deviceService.getPorts(d.id());
+            for(Port port : ports) {
+                log.info("Getting info for port" + port.number());
+                PortStatistics portstat = deviceService.getSpecificPortStatistics(d.id(), port.number());
+                PortStatistics portdeltastat = deviceService.getSpecificPortDeltaStatistics(d.id(), port.number());
+                if(portstat != null)
+                    log.info("portstat bytes recieved" + portstat.bytesReceived());
+                else
+                    log.info("Unable to read portStats");
 
+                if(portdeltastat != null)
+                    log.info("portdeltastat bytes recieved" + portdeltastat.bytesReceived());
+                else
+                    log.info("Unable to read portDeltaStats");
+            }
+
+            /*
                 List<PortStatistics> portStatisticsList = deviceService.getPortDeltaStatistics(d.id());
                 for (PortStatistics portStats : portStatisticsList) {
                     try {
@@ -79,7 +96,7 @@ public class AppComponent {
                         e.printStackTrace();
                     }
 
-                }
+                } */
 
         }
 
