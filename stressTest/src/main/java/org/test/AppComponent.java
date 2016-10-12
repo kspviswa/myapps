@@ -53,12 +53,6 @@ public class AppComponent {
     protected DeviceService deviceService;
 
     @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
-    protected FlowRuleService flowRuleService;
-
-    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
-    protected FlowObjectiveService flowObjectiveService;
-
-    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
     protected CoreService coreService;
 
     private ApplicationId appId;
@@ -70,32 +64,21 @@ public class AppComponent {
 
         appId = coreService.registerApplication("org.test.app");
         log.info("Started " + appId.name());
-        TrafficSelector.Builder selectorBuilder = DefaultTrafficSelector.builder();
-        selectorBuilder.matchTunnelId(123);
-
-        TrafficTreatment treatment = DefaultTrafficTreatment.builder()
-                .drop()
-                .build();
-
         Iterable<Device> devices = deviceService.getDevices();
         for(Device d : devices) {
             log.info("Device id" + d.id());
-            ForwardingObjective forwardingObjective = DefaultForwardingObjective.builder()
-                    .withSelector(selectorBuilder.build())
-                    .withTreatment(treatment)
-                    .withPriority(DEFAULT_PRIORITY)
-                    .withFlag(ForwardingObjective.Flag.VERSATILE)
-                    .fromApp(appId)
-                    .makePermanent()
-                    .add();
-
-            flowObjectiveService.forward(d.id(),
-                                         forwardingObjective);
+            FlowPusherTask task = new FlowPusherTask();
+            task.init(5);
+            task.setAppId(appId);
+            task.setDevice(d);
+            //task.setnWorkers(100);
+            task.schedule();
         }
     }
 
     @Deactivate
     protected void deactivate() {
+
         log.info("Stopped");
     }
 
