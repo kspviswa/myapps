@@ -36,6 +36,10 @@ import org.slf4j.LoggerFactory;
 import org.apache.felix.scr.annotations.ReferenceCardinality;
 import org.onosproject.net.device.DeviceService;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import static org.onosproject.net.PortNumber.portNumber;
 
 /**
@@ -55,30 +59,43 @@ public class AppComponent {
     @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
     protected CoreService coreService;
 
+    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
+    protected FlowRuleService flowRuleService;
+
+    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
+    protected FlowObjectiveService flowObjectiveService;
+
     private ApplicationId appId;
+
+    private List<FlowPusherTask> flows;
 
 
 
     @Activate
     protected void activate() {
 
+        flows = new ArrayList<FlowPusherTask>();
         appId = coreService.registerApplication("org.test.app");
         log.info("Started " + appId.name());
         Iterable<Device> devices = deviceService.getDevices();
         for(Device d : devices) {
             log.info("Device id" + d.id());
             FlowPusherTask task = new FlowPusherTask();
-            task.init(5);
+            task.setFlowObjectiveService(this.flowObjectiveService);
+            task.init(1000);
             task.setAppId(appId);
             task.setDevice(d);
             //task.setnWorkers(100);
             task.schedule();
+            flows.add(task);
         }
     }
 
     @Deactivate
     protected void deactivate() {
-
+        for(FlowPusherTask fp : flows) {
+            fp.cancel();
+        }
         log.info("Stopped");
     }
 
