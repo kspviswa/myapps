@@ -6,6 +6,8 @@ import org.onosproject.core.ApplicationId;
 import org.onosproject.net.Device;
 import org.onosproject.net.flow.DefaultTrafficSelector;
 import org.onosproject.net.flow.DefaultTrafficTreatment;
+import org.onosproject.net.flow.FlowRuleOperations;
+import org.onosproject.net.flow.FlowRuleOperationsContext;
 import org.onosproject.net.flow.FlowRuleService;
 import org.onosproject.net.flow.TrafficSelector;
 import org.onosproject.net.flow.TrafficTreatment;
@@ -61,6 +63,8 @@ public class FlowPusherTask {
 
     protected TrafficSelector.Builder selectorBuilder;
     protected TrafficTreatment treatment;
+    protected FlowRuleOperationsContext flowRuleOperationsContext;
+    protected FlowRuleOperations.Builder builder;
 
     protected ApplicationId appId;
 
@@ -110,6 +114,19 @@ public class FlowPusherTask {
                     .drop()
                     .build();
 
+        builder = FlowRuleOperations.builder();
+
+        flowRuleOperationsContext = new FlowRuleOperationsContext() {
+            @Override
+            public void onSuccess(FlowRuleOperations ops) {
+                log.info("#### Installed flow : Success ops => " + ops);
+            }
+
+            @Override
+            public void onError(FlowRuleOperations ops) {
+                log.info("#### Installed flow : Error");
+            }
+        };
     }
 
     public void schedule() {
@@ -133,12 +150,6 @@ public class FlowPusherTask {
         @Override
         public void run() {
 
-            log.info("Starting the Flowpusher task for " +
-                             FlowPusherTask.this.appId.name() +
-                             " on device " +
-                             FlowPusherTask.this.device.id());
-
-
             ForwardingObjective forwardingObjective = DefaultForwardingObjective.builder()
                     .withSelector(FlowPusherTask.this.selectorBuilder.build())
                     .withTreatment(FlowPusherTask.this.treatment)
@@ -147,7 +158,18 @@ public class FlowPusherTask {
                     .fromApp(FlowPusherTask.this.appId)
                     /*.makePermanent()*/
                     .makeTemporary(ThreadLocalRandom.current().nextInt(100, 4000 + 1))
-                    .add();
+                    .add(new TimerObjectiveContext());
+
+            //FlowRuleOperations operations = builder.build(flowRuleOperationsContext);
+            //flowRuleService.apply(operations);
+
+
+
+            log.info("Starting the Flowpusher task for " +
+                             FlowPusherTask.this.appId.name() +
+                             " on device " +
+                             FlowPusherTask.this.device.id() +
+                             "with id => " + forwardingObjective.id());
 
             flowObjectiveService.forward(FlowPusherTask.this.device.id(),
                                          forwardingObjective);

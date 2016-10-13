@@ -82,7 +82,8 @@ public class AppComponent {
             log.info("Device id" + d.id());
             FlowPusherTask task = new FlowPusherTask();
             task.setFlowObjectiveService(this.flowObjectiveService);
-            task.init(1000);
+            task.setFlowRuleService(this.flowRuleService);
+            task.init(100);
             task.setAppId(appId);
             task.setDevice(d);
             //task.setnWorkers(100);
