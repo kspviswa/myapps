@@ -29,6 +29,7 @@ import org.zeromq.ZMQ.Socket;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -41,8 +42,8 @@ import static org.onosproject.net.DeviceId.deviceId;
 /**
  * Created by kspviswa-onos-mcord on 4/12/16.
  */
-//@Component(immediate = true)
-//@Service
+@Component(immediate = true)
+@Service
 public class ZeromqSBControllerImpl implements ZeromqSBController{
 
     private static final Logger log =
@@ -68,8 +69,8 @@ public class ZeromqSBControllerImpl implements ZeromqSBController{
 
     @Deactivate
     public void deactivate() {
-        deviceMap.clear();
-        destroyConnections();
+        //deviceMap.clear();
+        //destroyConnections();
         log.info("ZMQ DeviceController Stopped");
     }
 
@@ -166,5 +167,15 @@ public class ZeromqSBControllerImpl implements ZeromqSBController{
     @Override
     public void monitorConnections() {
 
+    }
+
+    @Override
+    public List<String> getAvailableDevices() {
+        List<String> devices = new ArrayList<>();
+        for( DeviceId d : deviceMap.keySet()) {
+            devices.add(d.toString());
+        }
+
+        return devices;
     }
 }

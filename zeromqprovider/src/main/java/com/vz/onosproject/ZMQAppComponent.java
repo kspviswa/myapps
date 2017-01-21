@@ -34,11 +34,13 @@ import org.onosproject.net.flow.FlowRuleProviderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+
 /**
  * Skeletal ONOS application component.
  */
 @Component(immediate = true)
-public class AppComponent {
+public class ZMQAppComponent {
 
     private final Logger log = LoggerFactory.getLogger(getClass());
 
@@ -56,7 +58,10 @@ public class AppComponent {
 
     private final ZeromqDeviceProvider deviceProvider = new ZeromqDeviceProvider();
     //private final ZeromqFlowRuleProvider flowRuleProvider = new ZeromqFlowRuleProvider();
-    private final ZeromqSBController controller = new ZeromqSBControllerImpl();
+    //private final ZeromqSBController controller = new ZeromqSBControllerImpl();
+
+    @Reference
+    private ZeromqSBController controller;
 
     private DeviceProviderService deviceProviderService;
     private FlowRuleProviderService flowRuleProviderService;
@@ -83,6 +88,10 @@ public class AppComponent {
         //flowRuleProviderService = null;
 
         log.info("Stopped");
+    }
+
+    public List<String> test() {
+        return controller.getAvailableDevices();
     }
 
 }

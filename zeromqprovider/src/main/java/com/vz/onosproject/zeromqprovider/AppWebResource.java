@@ -16,7 +16,14 @@
 package com.vz.onosproject.zeromqprovider;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.vz.onosproject.BlobStore.BlobStore;
+import com.vz.onosproject.ZMQAppComponent;
+import com.vz.onosproject.provider.zeromq.api.ZeromqSBController;
+import org.apache.felix.scr.annotations.Reference;
+import org.apache.felix.scr.annotations.ReferenceCardinality;
 import org.onosproject.rest.AbstractWebResource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -30,15 +37,30 @@ import static org.onlab.util.Tools.nullIsNotFound;
 @Path("provider/zmq/")
 public class AppWebResource extends AbstractWebResource {
 
+    private static final Logger log =
+            LoggerFactory.getLogger(AppWebResource.class);
+
+    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
+    protected BlobStore store;
+
+    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
+    protected ZMQAppComponent app;
+
+    @Reference
+    private ZeromqSBController controller;
     /**
      * Get hello world greeting.
      *
      * @return 200 OK
      */
     @GET
-    @Path("")
+    @Path("Test")
     public Response getGreeting() {
-        ObjectNode node = mapper().createObjectNode().put("hello", "ZMQ world");
+        String str = "";
+        for( String s : controller.getAvailableDevices()) {
+            str = str + s + " ";
+        }
+        ObjectNode node = mapper().createObjectNode().put("Devices : ", str);
         return ok(node).build();
     }
 
