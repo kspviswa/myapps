@@ -13,34 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.vz.onosproject;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+package com.vz.onosproject.zeromqprovider;
+
+import org.onlab.rest.AbstractWebApplication;
+
+import java.util.Set;
 
 /**
- * Set of tests of the ONOS application component.
+ * Sample REST API web application.
  */
-public class AppComponentTest {
-
-    /*private AppComponent component;
-
-    @Before
-    public void setUp() {
-        component = new AppComponent();
-        component.activate();
-
+public class AppWebApplication extends AbstractWebApplication {
+    @Override
+    public Set<Class<?>> getClasses() {
+        return getClasses(AppWebResource.class);
     }
-
-    @After
-    public void tearDown() {
-        component.deactivate();
-    }
-
-    @Test
-    public void basics() {
-
-    }*/
-
 }

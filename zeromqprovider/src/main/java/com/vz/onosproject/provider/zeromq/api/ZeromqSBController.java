@@ -5,11 +5,12 @@ package com.vz.onosproject.provider.zeromq.api;
  */
 
 import org.onosproject.net.DeviceId;
+import org.onosproject.net.device.DeviceProviderService;
 import org.onosproject.net.flow.FlowRule;
 
 public interface ZeromqSBController {
 
-    public void initConnections();
+    public void initConnections(DeviceProviderService providerService);
 
     public void destroyConnections();
 
