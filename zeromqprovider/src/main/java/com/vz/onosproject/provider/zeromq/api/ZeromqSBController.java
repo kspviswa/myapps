@@ -6,8 +6,8 @@ package com.vz.onosproject.provider.zeromq.api;
 
 import org.onosproject.net.DeviceId;
 import org.onosproject.net.device.DeviceProviderService;
-import org.onosproject.net.flow.FlowRule;
 
+import com.vz.onosproject.BlobStore.Blob;
 import java.util.List;
 
 public interface ZeromqSBController {
@@ -16,7 +16,7 @@ public interface ZeromqSBController {
 
     public void destroyConnections();
 
-    public void writeToDevice(FlowRule rule);
+    public void writeToDevice(DeviceId deviceId, Blob blob);
 
     public void monitorConnections();
 

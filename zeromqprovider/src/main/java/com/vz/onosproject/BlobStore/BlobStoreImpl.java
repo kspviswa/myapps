@@ -1,6 +1,7 @@
 package com.vz.onosproject.BlobStore;
 
 import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Service;
 import org.onosproject.net.DeviceId;
 
 import java.util.HashMap;
@@ -11,6 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Created by kspviswa-onos-mcord on 21/1/17.
  */
+@Service
 @Component
 public class BlobStoreImpl implements BlobStore {
 

@@ -19,7 +19,6 @@ import org.onosproject.net.device.DefaultPortDescription;
 import org.onosproject.net.device.DeviceDescription;
 import org.onosproject.net.device.DeviceProviderService;
 import org.onosproject.net.device.PortDescription;
-import org.onosproject.net.flow.FlowRule;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,6 +37,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import static org.onosproject.net.DeviceId.deviceId;
+
+import com.vz.onosproject.BlobStore.Blob;
 
 /**
  * Created by kspviswa-onos-mcord on 4/12/16.
@@ -156,12 +157,10 @@ public class ZeromqSBControllerImpl implements ZeromqSBController{
     }
 
     @Override
-    public void writeToDevice(FlowRule rule) {
-        DeviceId device = rule.deviceId();
-        byte[] payload = rule.payLoad().payLoad();
-        routerSocket.send(deviceMap.get(device));
+    public void writeToDevice(DeviceId deviceId, Blob blob) {
+        routerSocket.send(deviceMap.get(deviceId));
         routerSocket.send("");
-        routerSocket.send(payload);
+        routerSocket.send(blob.getBlob());
     }
 
     @Override

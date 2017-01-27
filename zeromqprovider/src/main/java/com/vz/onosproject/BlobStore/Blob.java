@@ -8,6 +8,10 @@ public class Blob {
         return blob;
     }
 
+    public Blob(byte[] blob) {
+        this.blob = blob;
+    }
+
     public void setBlob(byte[] blob) {
         this.blob = blob;
     }
