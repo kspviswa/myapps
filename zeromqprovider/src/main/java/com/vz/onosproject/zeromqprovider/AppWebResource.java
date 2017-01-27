@@ -38,6 +38,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 
 import static org.onlab.util.Tools.nullIsNotFound;
@@ -73,18 +74,25 @@ public class AppWebResource extends AbstractWebResource {
         return ok(node).build();
     }
 
+    /**
+     * Installs flows to downstream ZMQ device
+     * @param stream blob flowrule
+     * @return 200 OK
+     */
     @POST
     @Path("flows")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
+
     public Response persisFlow(InputStream stream) {
         ObjectNode jsonTree = null;
+        List<String> devices = controller.getAvailableDevices();
         try {
             jsonTree = (ObjectNode) mapper().readTree(stream);
             JsonNode devId = jsonTree.get("DeviceId");
             JsonNode payload = jsonTree.get("Payload");
 
-            if (devId == null || devId.asText().isEmpty()) {
+            if (devId == null || devId.asText().isEmpty() ||
+                    devices.contains(devId.asText()) == false) {
                 throw new IllegalArgumentException(INVALID_DEVICEID);
             }
 

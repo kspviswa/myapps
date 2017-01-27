@@ -158,8 +158,8 @@ public class ZeromqSBControllerImpl implements ZeromqSBController{
 
     @Override
     public void writeToDevice(DeviceId deviceId, Blob blob) {
-        routerSocket.send(deviceMap.get(deviceId));
-        routerSocket.send("");
+        routerSocket.sendMore(deviceMap.get(deviceId));
+        routerSocket.sendMore("");
         routerSocket.send(blob.getBlob());
     }
 
