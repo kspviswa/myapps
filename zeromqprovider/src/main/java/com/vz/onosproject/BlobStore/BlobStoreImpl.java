@@ -24,6 +24,13 @@ public class BlobStoreImpl implements BlobStore {
         if(dblob != null) {
             dblob.addBlob(blob);
         }
+        else
+        {
+            dblob = new DeviceBlob();
+            dblob.setDeviceId(device);
+            dblob.addBlob(blob);
+            blobmap.putIfAbsent(device, dblob);
+        }
     }
 
     @Override
