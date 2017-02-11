@@ -1,0 +1,51 @@
+{
+   "DeviceId" : "zmq:dev1",
+   "Payload" :  "input: { 
+        op-id: test,
+        contexts: [
+            {
+                instructions: {
+                    instr-3gpp-mob: test
+                },
+                context-id: test,
+                                dpn-group: site1-l3,
+                delegating-ip-prefixes: [
+                    test
+                ],
+                ul: {
+                    tunnel-local-address: test,
+                    tunnel-remote-address: test,
+                    mobility-tunnel-parameters: {
+                        tunnel-type: ietf-dmm-threegpp:gtpv1,
+                        tunnel-identifier: test
+                    },
+                        dpn-parameters: {}
+                },
+                                dl: {
+                    tunnel-local-address: test,
+                    tunnel-remote-address: test,
+                    mobility-tunnel-parameters: {
+                        tunnel-type: ietf-dmm-threegpp:gtpv1,
+                        tunnel-identifier: test
+                    },
+                        dpn-parameters: {}
+                },
+                dpns: [
+                    {
+                        dpn-id: dpn1,
+                        direction: uplink,
+                        dpn-parameters: {}
+                    }
+                ],
+                imsi: test,
+                ebi: test,
+                lbi: test
+            }
+        ],
+        client-id: 1,
+        session-state: complete,
+        admin-state: enabled,
+        op-type: test,
+        op-ref-scope: test
+    }" 
+}

@@ -1,0 +1,15 @@
+{
+   "input": {
+        "op-id": "test",
+        "targets": [
+            {
+                "target": "test"
+            }
+        ],
+        "client-id": "1",
+        "session-state": "complete",
+        "admin-state": "enabled",
+        "op-type": "test",
+        "op-ref-scope": "test"
+    }
+}
