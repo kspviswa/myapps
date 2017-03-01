@@ -95,31 +95,37 @@ public class AppWebResource extends AbstractWebResource {
     @Consumes(MediaType.APPLICATION_JSON)
 
     public Response persisFlow(InputStream stream) {
+        log.info("#### Pushing a flow");
         ObjectNode jsonTree = null;
         List<String> devices = controller.getAvailableDevices();
         try {
             jsonTree = (ObjectNode) mapper().readTree(stream);
             JsonNode devId = jsonTree.get("DeviceId");
             JsonNode payload = jsonTree.get("Payload");
+            String sPayload = payload.toString();
+
+            log.info("Device Id" + devId.asText());
+            log.info("Payload Text value " + payload.textValue() + " toString " + payload.toString() +"Type " + payload.getNodeType().toString());
 
             if (devId == null || devId.asText().isEmpty() ||
                     devices.contains(devId.asText()) == false) {
                 throw new IllegalArgumentException(INVALID_DEVICEID);
             }
 
-            if (payload == null || payload.asText().isEmpty()) {
+            if (payload == null || sPayload.isEmpty()) {
                 throw new IllegalArgumentException(INVALID_FLOW);
             }
 
             DeviceId deviceId = DeviceId.deviceId(devId.asText());
-            Blob blob = new Blob(payload.asText().getBytes());
+            Blob blob = new Blob(sPayload.getBytes());
 
             store.InsertBlob(deviceId, blob);
             controller.writeToDevice(deviceId, blob);
 
             return Response.ok().build();
-        } catch (IOException e) {
+        } catch (/*IO*/Exception e) {
             e.printStackTrace();
+            log.info("###### ERROR " + e.getMessage());
         }
             return Response.noContent().build();
     }
