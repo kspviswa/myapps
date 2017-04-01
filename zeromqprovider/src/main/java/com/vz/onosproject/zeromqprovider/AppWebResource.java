@@ -60,6 +60,16 @@ public class AppWebResource extends AbstractWebResource {
 
     private final String INVALID_DEVICEID = "No such device available";
     private final String INVALID_FLOW = "Malformed flow payload";
+
+    public static long getNumPostRecieved() {
+        return numPostRecieved;
+    }
+
+    private static long numPostRecieved;
+
+    public static void incrPostCount() {
+        numPostRecieved++;
+    }
     /**
      * Get hello world greeting.
      *
@@ -116,6 +126,8 @@ public class AppWebResource extends AbstractWebResource {
 
             store.InsertBlob(deviceId, blob);
             controller.writeToDevice(deviceId, blob);
+            incrPostCount();
+            log.info("#### Total num of posts :  " + getNumPostRecieved());
 
             return Response.ok().build();
         } catch (IOException e) {
